@@ -59,13 +59,7 @@ body {
   position: relative;
   right: 30px;
   list-style: none;
-  justify-content: center;
-
-
-  
-
-  /* Debug border */
-  /* border: solid blue; */
+  justify-content:left;
 }
 
 .navbar a {
@@ -102,11 +96,17 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+.history_heading{
+  text-align: center;
+}
+
 .slider {
-  position: relative;
+  position:relative;
   width: 600px;
   height: 400px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .slides {
@@ -125,12 +125,11 @@ main {
   height: auto;
 }
 
-/* Hide radio buttons */
 input[type="radio"] {
   display: none;
 }
 
-/* Slide transitions based on checked input */
+
 #slide1:checked ~ .slides {
   transform: translateX(0%);
 }
@@ -143,7 +142,7 @@ input[type="radio"] {
   transform: translateX(-200%);
 }
 
-/* Manual navigation arrows */
+
 .nav-arrow {
   position: absolute;
   top: 50%;
@@ -161,37 +160,6 @@ input[type="radio"] {
 
 .next {
   right: 0;
-}
-
-/* Automatic slide navigation */
-.auto-navigation label {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: -1;
-  animation: autoSlide 30s infinite;
-}
-
-@keyframes autoSlide {
-  0%, 33.33% {
-      opacity: 1;
-  }
-  33.34%, 66.66% {
-      opacity: 0;
-  }
-}
-
-.auto-navigation label:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.auto-navigation label:nth-child(2) {
-  animation-delay: 10s;
-}
-
-.auto-navigation label:nth-child(3) {
-  animation-delay: 20s;
 }
 
 
@@ -359,7 +327,7 @@ form {
 /* CSS for footer */
 
 .footer {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--cg-black);
@@ -368,4 +336,12 @@ form {
   bottom: 0;
   width: 100%;
   height: 2.5rem;
+  text-align: center; */
+
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  height: 80px; /* Set the height of the footer */
+  background-color: #333; /* Example background */
+  color: #d11010; /* Example text color */
 }
