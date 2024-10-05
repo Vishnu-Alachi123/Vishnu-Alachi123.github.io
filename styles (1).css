@@ -17,6 +17,22 @@ body {
   padding: 0;
   margin: 0;
   font-family: monospace;
+  height: 100%;
+}
+
+.about_me{
+  background-color: aquamarine;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+
+.content{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* CSS for navigation */
@@ -36,13 +52,11 @@ body {
   background-color: var(--cg-black);
   color: var(--cg-white);
   padding: 0px 0px;
-
-  /* Debug border */
-  /* border: solid red; */
 }
 
 .navbar li{
   display: inline;
+  
   
 
 }
@@ -60,6 +74,11 @@ body {
   right: 30px;
   list-style: none;
   justify-content:left;
+}
+
+.nav-list li {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .navbar a {
@@ -97,71 +116,6 @@ main {
   align-items: center;
 }
 
-.history_heading{
-  text-align: center;
-}
-
-.slider {
-  position:relative;
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.slides {
-  display: flex;
-  width: 300%; /* 3 slides, so 300% */
-  height: 100%;
-}
-
-.slide {
-  width: 100%;
-  transition: 0.5s;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-
-#slide1:checked ~ .slides {
-  transform: translateX(0%);
-}
-
-#slide2:checked ~ .slides {
-  transform: translateX(-100%);
-}
-
-#slide3:checked ~ .slides {
-  transform: translateX(-200%);
-}
-
-
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-
 
 .page-title {
   display: flex;
@@ -170,23 +124,18 @@ input[type="radio"] {
   font-family: Georgia;
 }
 
-/* CSS for portfolio grid */
+
 
 .project {
   display: flex;
   flex-direction: row;
   max-width: 100%;
   margin: 1em 0 2em 0;
-
-  /* Debug border */
-  /* border: 2px solid blue; */
 }
 
 .item-link {
   width: 70%;
 
-  /* Debug border */
-  /* border: 2px solid red; */
 }
 
 .project-image {
@@ -196,8 +145,7 @@ input[type="radio"] {
   flex-basis: 50px;
   flex-grow: 2;
 
-  /* Debug border */
-  /* border: 2px solid black; */
+
 }
 
 .project-details {
@@ -215,8 +163,11 @@ input[type="radio"] {
   text-align: center;
   justify-content: center;
 
-  /* Debug border */
-  /* border: 2px solid green; */
+}
+
+.website_image{
+  width: 550px;
+  border: double 5px black;
 }
 
 .project-details a {
@@ -240,29 +191,47 @@ input[type="radio"] {
   font-size: 20px;
 }
 
-/* CSS for home page */
 
-.about {
-  display: flex;
+
+
+.about_me {
+  margin-top: 30px;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
+  background-color: #8d8d8d;
+  border: 5px double #000000;
   border-radius: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  height: 500px;
+  width: 1200px
 }
 
-.about-image img {
-  max-width: 300px;
-  border-radius: 3px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+.image{
+  border: double black;
+  border-radius: 10px;
+  border-width: 10px;
 }
 
 .about-text {
   flex: 1;
   margin-left: 20px;
 }
+
+.container{
+  display:flex;
+  gap:30px;
+}
+
+.about_me_text{
+  border-style: double;
+  border-radius: 20px;
+  border-width: 10px;
+  padding: 10px;
+  font-size:large;
+  background-color: rgb(185, 185, 185);
+  line-height: 27px;
+}
+
 
 .about-text h2 {
   font-size: 24px;
@@ -274,7 +243,7 @@ input[type="radio"] {
   line-height: 1.5;
 }
 
-/* CSS for resume page */
+
 
 .button {
   background-color: var(--cg-black);
@@ -297,7 +266,6 @@ input[type="radio"] {
   font-family: Georgia;
 }
 
-/* CSS for contact form */
 
 label {
   display: block;
@@ -318,30 +286,297 @@ textarea {
   resize: none;
 }
 
-/* Add some spacing to the form */
+
 form {
   width: 500px;
   margin: 0 auto;
 }
 
-/* CSS for footer */
+
 
 .footer {
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--cg-black);
   color: var(--cg-white);
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
-  text-align: center; */
+  text-align: center;
+  margin-top: auto;
+  padding: 1rem;
 
+}
+
+
+
+.DailyGoal{
+  flex: 1;
+  border: 7px;
+  border-style: double;
+  padding: 10px;
+  margin: 10px;
+  height:210px;
+  background-color: #acacac;
+}
+.Personal_Website{
+  flex: 1;
+  border: 7px;
+  border-style: double;
+  padding: 10px;
+  margin: 10px;
+  background-color: #acacac;
+}
+
+.contact{
+  margin-top: 100px;
+  text-align: center;
+  font-size:40px;
+}
+
+.contact_me{
+  margin-top: 100px;
+  padding-top: 20px;
+  padding-bottom : 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: double 5px black;
+  border-radius: 5px;
+  background-color: #8d8d8d;
+  height: 150px;
+  width: 450px;
+  flex-direction: column;
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  height: 80px; /* Set the height of the footer */
-  background-color: #333; /* Example background */
-  color: #d11010; /* Example text color */
+  gap: 20px;
+
+}
+.linkedin{
+  flex: 1;
+  color: inherit; 
+  text-decoration: none; 
+  padding: 5px;
+  border: double 5px black;
+  border-radius: 5px;
+  background-color: #c6c6c6;
+}
+
+.email{
+  flex: 1;
+  color: inherit; 
+  text-decoration: none; 
+  padding: 5px;
+  border: double 5px black;
+  border-radius: 5px;
+  background-color: #c6c6c6;
+}
+
+.linkedin:hover{
+  background-color: #919191;
+}
+
+.projects{
+  display:flex;
+}
+
+.More_Projects{
+  position:static;
+  margin-top: 20px;
+  top: 100px;
+}
+
+.blog{
+  margin-top: 100px;
+}
+
+.section{
+  align-content: left;
+  width: 50%;
+
+}
+
+.experience h4{
+  margin:0px;
+  margin-bottom: 5px;
+}
+
+.coursework{
+  padding-left: 10px;
+  margin-left: 0px;
+  list-style-type: none;
+}
+
+.coursework li::before {
+  content: "-";
+  position: absolute;
+  left:0;
+}
+
+.coursework li {
+  position: relative;
+  padding-left: 20px;
+}
+
+ul li{
+  padding:10px;
+}
+
+.portfolio{
+  padding-left: 10px;
+  margin-left: 0px;
+  list-style-type: none;
+}
+
+.portfolio li::before {
+  content: "-";
+  position: absolute;
+  left:0;
+}
+
+.portfolio li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#experience{
+  padding-left: 2px;
+  margin-left: 0px;
+  list-style-type: none;
+}
+
+.experience h4{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.experience h5{
+  padding-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+
+}
+
+#experience li::before {
+  content: "-";
+  position: absolute;
+  left:0;
+}
+
+#experience li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  line-height: 1.25;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+}
+h4{
+  font-size: larger;
+}
+h5{
+  font-size: medium;
+}
+
+.experience_heading{
+  padding-bottom: 0px;
+}
+
+.download_button{
+  background-color: gray; 
+    color: rgb(0, 0, 0); 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    border-style: double;
+    border-width: 3px;
+    transition: background-color 0.3s; 
+}
+.download_button:hover {
+  background-color: rgb(78, 78, 78); 
+}
+
+.download{
+  padding-top: 20px;
+}
+
+.skills{
+  background-color: gray;
+  padding: 10px;
+  padding-top: 3px;
+  border-color: black;
+  border-style: double;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:10px;
+}
+.education{
+  background-color: gray;
+  padding: 10px;
+  padding-top: 3px;
+  border-color: black;
+  border-style: double;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:10px;
+  transition: background-color 0.3s;
+  
+}
+.Coursework{
+  background-color: gray;
+  padding: 10px;
+  padding-top: 3px;
+  border-color: black;
+  border-style: double;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:10px;
+}
+.Portfolio{
+  background-color: gray;
+  margin-top: 1px;
+  padding: 10px;
+  padding-top: 0px;
+  border-color: black;
+  border-style: double;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:10px;
+  transition: background-color 0.3s;
+}
+.Experience{
+  background-color:gray;
+  padding: 10px;
+  padding-top: 3px;
+  border-color: black;
+  border-style: double;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:10px;
+}
+.portfolio {
+    color: inherit; 
+    text-decoration: none; 
+    
+}
+
+.Portfolio:hover{
+  background-color: rgb(78, 78, 78)
+}
+
+.education:hover{
+  background-color: rgb(78, 78, 78); 
+}
+
+.Education{
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.slider{
+  margin-left: 200px;
 }
