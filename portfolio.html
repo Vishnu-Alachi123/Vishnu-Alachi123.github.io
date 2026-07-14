@@ -127,16 +127,30 @@
       <!-- Robot Arm + ML -->
       <article class="panel ticks pcard">
         <div class="pgraphic"><svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg">
-          <g stroke="#52c7ff" stroke-width="3" fill="none" stroke-linecap="round">
-            <path d="M46 112 L46 82 L92 56"/>
-            <path d="M92 56 L142 72"/>
+          <!-- ghost second arm: hints at the two-arm coordination goal -->
+          <g stroke="#6f7a88" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+            <path d="M360 118 L360 78 L318 54 L280 74"/>
           </g>
-          <circle cx="46" cy="112" r="6" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
-          <circle cx="92" cy="56" r="5" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
-          <path d="M142 64 l10 -6 M142 80 l10 6" stroke="#52c7ff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- base + mount -->
+          <rect x="30" y="112" width="40" height="10" rx="2" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
+          <!-- articulated links -->
+          <g class="g-bob" stroke="#52c7ff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50 112 L50 74 L98 48 L150 66"/>
+          </g>
+          <!-- joints -->
+          <circle cx="50" cy="112" r="6" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
+          <circle cx="50" cy="74" r="5" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
+          <circle cx="98" cy="48" r="5" fill="#11161d" stroke="#52c7ff" stroke-width="2"/>
+          <!-- gripper -->
+          <g class="g-bob" stroke="#52c7ff" stroke-width="4" fill="none" stroke-linecap="round">
+            <path d="M150 66 l14 -9 M150 66 l14 9"/>
+          </g>
+          <!-- target object + detection box -->
           <rect x="250" y="70" width="42" height="42" rx="3" fill="rgba(255,180,84,.18)" stroke="#ffb454" stroke-width="2"/>
           <rect class="g-blink" x="243" y="63" width="56" height="56" fill="none" stroke="#52c7ff" stroke-width="1.5" stroke-dasharray="4 4"/>
           <text x="243" y="56" fill="#52c7ff" font-family="monospace" font-size="9">object · 0.98</text>
+          <!-- reach trajectory -->
+          <path d="M164 62 Q210 44 250 82" stroke="#ffb454" stroke-width="1.5" fill="none" stroke-dasharray="3 5" opacity="0.7"/>
           <path d="M271 40 v12 M271 128 v-12 M335 91 h-12 M207 91 h12" stroke="#6f7a88" stroke-width="1"/>
         </svg></div>
         <div class="row-top">
