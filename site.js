@@ -41,6 +41,27 @@ if (track) {
         cards[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }));
       dotsWrap.appendChild(dot);
     });
+    // keyboard arrows
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') track.scrollBy({ left: step(), behavior: 'smooth' });
+      if (e.key === 'ArrowLeft') track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    // drag / swipe to scroll
+    let down = false, startX = 0, startScroll = 0, moved = 0;
+    track.addEventListener('pointerdown', (e) => {
+      down = true; moved = 0; startX = e.clientX; startScroll = track.scrollLeft;
+      track.classList.add('dragging');
+    });
+    track.addEventListener('pointermove', (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX; moved = Math.abs(dx);
+      track.scrollLeft = startScroll - dx;
+    });
+    const end = () => { down = false; track.classList.remove('dragging'); };
+    track.addEventListener('pointerup', end);
+    track.addEventListener('pointerleave', end);
+    track.addEventListener('click', (e) => { if (moved > 6) e.preventDefault(); }, true);
+
     const dots = Array.from(dotsWrap.children);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
