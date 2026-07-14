@@ -7,6 +7,21 @@ if (menuBtn && mobileMenu) {
   });
 }
 
+// Scroll-reveal for content panels (skips carousel cards + respects reduced motion)
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const track = document.getElementById('carouselTrack');
+  const targets = Array.from(document.querySelectorAll('.panel'))
+    .filter((el) => !track || !track.contains(el));
+  targets.forEach((el) => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach((el) => io.observe(el));
+})();
+
 // Projects carousel
 const track = document.getElementById('carouselTrack');
 if (track) {
