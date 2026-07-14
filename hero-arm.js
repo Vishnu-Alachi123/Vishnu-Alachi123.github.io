@@ -3,6 +3,7 @@
 (function () {
   const mount = document.getElementById('hero-canvas');
   if (!mount || typeof THREE === 'undefined') return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const W = () => mount.clientWidth;
   const H = () => mount.clientHeight;
@@ -78,8 +79,8 @@
   const clock = new THREE.Clock();
   let raf;
   function animate() {
-    raf = requestAnimationFrame(animate);
-    const t = clock.getElapsedTime();
+    if (!reduceMotion) raf = requestAnimationFrame(animate);
+    const t = reduceMotion ? 0.6 : clock.getElapsedTime();
 
     // base slowly orients toward cursor x
     base.rotation.y = collar.rotation.y = shoulder.rotation.y =
