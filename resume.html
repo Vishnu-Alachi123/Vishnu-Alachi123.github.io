@@ -1,122 +1,135 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Vishnu's Website</title>
-        <link rel="stylesheet" href="styles (1).css" />
-    </head>
-  <body>
-    <div class = "content">
-    <nav Class = "navbar">
-        <h1 class = "logo">
-            <a href = "index.html">
-                Vishnu's Website
-            </a>
-        </h1>
-        <ul class = "nav_list">
-            <li><a href = "index.html">Home</a></li>
-            <li><a href = "blog.html">Blog</a></li>
-            <li><a href = "contact.html">Contact</a></li>
-            <li><a href = "portfolio.html">Portfolio</a></li>
-            <li><a href = "resume.html">Resume</a></li>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Vishnu Alachi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
 
-        </ul>
-
-    </nav>
-    <main>
-        <div class = "download">
-        <a class = "download_button" href="image1.jpg" download >Download Resume</a>
-        </div>
-        <div class = "resume"></div>
-        <section class = "section">
-            <a class = "portfolio" href = "portfolio.html">
-            <div class = "Portfolio">
-            <h2>Projects</h2>
-
-            <div>
-                <ul class = "portfolio">
-                    <li><strong>DailyGoal</strong> : <strong>DailyGoal</strong> is a <strong>React Native</strong> app that helps college students track goals, manage tasks, and monitor habits with deadlines, reminders, and planning tools for productivity.</li>
-                    <li><strong>Personal Website </strong>: I built my website from the ground up using <strong>HTML and CSS</strong>, showcasing my skills and creativity through pages like my <strong>portfolio, resume, and about me</strong>, marking a significant milestone in my web development journey.</li>
-                </ul>
-            </div>
-            </div>
-
-        </a>
-        </section>
-        <section class = "section">
-            <a class = "Education" href = "https://www.calpoly.edu/major/software-engineering" target="_blank">
-            <div class  = "education">
-            <h2>Education</h2>
-            <div>
-                <p>
-                <strong>California Polytechnic State University, San Luis Obispo (Cal Poly) </strong>
-                </p>
-                <p>
-                Bachelor of Science Degree in <strong>Software Engineering</strong>
-                </p>
-                <p>
-                <strong>Current GPA</strong> : <strong>3.4</strong>	
-                </p>
-            </div>
-            </div>
-        </a>
-        </section>
-        <section class = "section">
-            <div class = "skills">
-            <h2>Skills</h2>
-            <div>
-                Programming Languages:  Java, Python, JavaScript, CSS, Html, React Native
-            </div>
-            </div>
-
-        </section>
-        <section class = "section">
-            <div class= "Coursework">
-            <h2>CourseWork</h2>
-            <ul class = "coursework">
-                <li class = "coursework">Fundamentals of Computer Science</li>
-                <li class = "coursework">Introduction to Computing</li>
-                <li class = "coursework">Data Structures</li>
-                <li class = "coursework">Project-Based Object-Oriented Programming and Design</li>
-            </ul>
-            </div>
-
-        </section>
-        
-        <section class = "section">
-            <div class = "Experience">
-            <h2>Experience</h2>
-            <div>
-                <ul class = "experience">
-                    <li>
-                        <h4>Software Development Intern </h4>
-                        <h5>Exalture</h5>
-                        <ul id = "experience" >
-                            <li>Worked in department for code debugging and code refactoring for anti-collision software for satellites. </li>
-                            <li>Assisted in coding for machine language aspect of satellite project. </li>
-                            <li>Lead seminar talking about importance of code efficiency and code organization. </li>
-
-                        </ul>
-                        
-                    </li>
-                    <li>
-                        <h4>Head of Social Media Outreach</h4>
-                            <h5>Theruvoram NGO </h5>
-                        <ul id = "experience" >
-                            <li>Designed Blog Webpage for Non-Profit Organization. </li>
-                            <li>Wrote biweekly blog posts and managed social media. </li>
-                            <li>Edited and posted community awareness videos. </li>
-
-                        </ul>
-
-
-                    </li>
-                </ul>
-            </div>
-            </div>
-
-        </section>
-    </main>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="dot"></span>VISHNU<span class="tick">_</span>ALACHI</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+      <ul class="nav-links">
+        <li><a href="index.html">/home</a></li>
+        <li><a href="portfolio.html">/projects</a></li>
+        <li><a href="resume.html" class="active">/resume</a></li>
+        <li><a href="blog.html">/blog</a></li>
+        <li><a href="contact.html">/contact</a></li>
+      </ul>
     </div>
-    <footer class = "footer">© 2024 <Vishnu's Website> | All Rights Reserved</footer>
-  </body>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="index.html">/home</a></li>
+      <li><a href="portfolio.html">/projects</a></li>
+      <li><a href="resume.html">/resume</a></li>
+      <li><a href="blog.html">/blog</a></li>
+      <li><a href="contact.html">/contact</a></li>
+    </ul>
+  </header>
+
+  <section class="wrap" style="padding-top:52px; display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:flex-end;">
+    <div>
+      <span class="eyebrow">// spec sheet</span>
+      <h1 style="font-family:var(--sans); font-weight:700; font-size:clamp(2.1rem,5vw,3.2rem); color:#fff; letter-spacing:-0.03em; margin-top:16px;">Vishnu Alachi</h1>
+      <p class="mono" style="color:var(--ink-soft); margin-top:8px; font-size:.85rem;">SOFTWARE ENGINEERING · CAL POLY SLO · GPA 3.4</p>
+    </div>
+    <a href="Vishnu_Alachi_resume.pdf" download class="btn btn-primary">↓ DOWNLOAD PDF</a>
+  </section>
+
+  <main class="wrap section" style="padding-top:36px; display:flex; flex-direction:column; gap:20px;">
+
+    <section class="panel ticks" style="padding:28px;">
+      <span class="eyebrow">// education</span>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-top:14px;">
+        <div>
+          <p style="color:#fff; font-weight:600;">California Polytechnic State University, San Luis Obispo</p>
+          <p style="color:var(--ink-soft);">B.S. in Software Engineering</p>
+        </div>
+        <p class="mono" style="color:var(--cyan);">GPA 3.4</p>
+      </div>
+    </section>
+
+    <section class="panel ticks" style="padding:28px;">
+      <span class="eyebrow">// experience</span>
+      <div style="display:flex; flex-direction:column; gap:26px; margin-top:18px;">
+
+        <div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px;">
+            <p style="color:#fff; font-weight:600;">Software Development Intern</p>
+            <p class="mono" style="color:var(--cyan); font-size:.82rem;">ORACLE</p>
+          </div>
+          <ul style="margin-top:10px; padding-left:18px; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px; font-size:.94rem;">
+            <li>Built a Codex-native AI operations platform (Oracle DIT Tools): an MCP server that exposes approved internal Jenkins operations to an AI agent through natural language.</li>
+            <li>Designed a secure, queue-aware backend — allowlisted jobs, signed stateless status handles, credential redaction, owner-scoped polling, and separate DIT/VM controller routing.</li>
+            <li>Wrote extensive unit and evaluator tests covering validation, controller routing, status-handle signing/expiry, and sensitive-value leakage prevention.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px;">
+            <p style="color:#fff; font-weight:600;">Software Development Intern</p>
+            <p class="mono" style="color:var(--cyan); font-size:.82rem;">EXALTURE</p>
+          </div>
+          <ul style="margin-top:10px; padding-left:18px; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px; font-size:.94rem;">
+            <li>Debugged and refactored anti-collision software for satellites.</li>
+            <li>Contributed to the machine-learning component of the satellite project.</li>
+            <li>Led a seminar on the importance of code efficiency and organization.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px;">
+            <p style="color:#fff; font-weight:600;">Head of Social Media Outreach</p>
+            <p class="mono" style="color:var(--cyan); font-size:.82rem;">THERUVORAM NGO</p>
+          </div>
+          <ul style="margin-top:10px; padding-left:18px; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px; font-size:.94rem;">
+            <li>Designed the blog webpage for the non-profit.</li>
+            <li>Wrote biweekly blog posts and managed social media.</li>
+            <li>Edited and posted community-awareness videos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="panel ticks" style="padding:28px;">
+        <span class="eyebrow">// skills</span>
+        <div class="tags" style="margin-top:16px;">
+          <span class="tag">Java</span><span class="tag">Python</span><span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">React&nbsp;Native</span>
+          <span class="tag">MongoDB</span><span class="tag">MCP&nbsp;/&nbsp;AI&nbsp;Agents</span>
+          <span class="tag">Computer&nbsp;Vision</span><span class="tag">Jenkins</span><span class="tag">HTML&nbsp;/&nbsp;CSS</span>
+        </div>
+      </section>
+      <section class="panel ticks" style="padding:28px;">
+        <span class="eyebrow">// coursework</span>
+        <ul style="margin-top:16px; padding-left:18px; color:var(--ink-soft); display:flex; flex-direction:column; gap:5px; font-size:.94rem;">
+          <li>Artificial Intelligence (CSC 480)</li>
+          <li>Data Structures</li>
+          <li>Project-Based Object-Oriented Programming &amp; Design</li>
+          <li>Fundamentals of Computer Science</li>
+          <li>Introduction to Computing</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span>© 2026 VISHNU ALACHI · BUILT FROM SCRATCH</span>
+      <div class="foot-links">
+        <a href="https://github.com/Vishnu-Alachi123" target="_blank" rel="noopener">GITHUB</a>
+        <a href="https://www.linkedin.com/in/vishnu-alachi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
 </html>

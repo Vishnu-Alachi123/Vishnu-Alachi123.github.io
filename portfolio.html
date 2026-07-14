@@ -1,63 +1,199 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Vishnu's Website</title>
-        <link rel="stylesheet" href="styles (1).css" />
-    </head>
-  <body>
-    <div class = "content">
-    <nav Class = "navbar">
-        <h1 class = "logo">
-            <a href = "index.html">
-                Vishnu's Website
-            </a>
-        </h1>
-        <ul class = "nav_list">
-            <li><a href = "index.html">Home</a></li>
-            <li><a href = "blog.html">Blog</a></li>
-            <li><a href = "contact.html">Contact</a></li>
-            <li><a href = "portfolio.html">Portfolio</a></li>
-            <li><a href = "resume.html">Resume</a></li>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Vishnu Alachi</title>
+  <meta name="description" content="Projects by Vishnu Alachi — AI operations tooling, a poker engine, a learning robot arm, and full-stack products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
 
-        </ul>
-
-    </nav>
-    <main>
-        <h1>Projects</h1>
-        <div class = "projects">
-            
-            <div class = "DailyGoal">
-                <h3>DailyGoal</h3>
-                <div class = "DailyGoal_Project_Status">
-                    <h3>Status : In Development</h3>
-                    <div class = "project_details">
-                    <p>
-                        <strong>DailyGoal</strong> is a productivity app using  <strong>React Native </strong>tailored for college students. The app helps users track goals, manage tasks, and stay on top of recurring activities or habits such as studying and exercising. It also allows users to set deadlines, plan tasks in advance, and set reminders. The goal is to provide a comprehensive tool for students to enhance their focus and productivity in their daily lives. The project is still <em> in development</em>, but it aims to be a go-to app for task management and personal growth.
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class = "Personal_Website">
-                <h3>Personal Website</h3>
-                <div class = "personal_website_Project_status">
-                    <img src = "image2.png" alt="image of personal website" class = "website_image">
-                </div>
-                <div class = "about_website">
-                    <p>
-                    I've built my website from the ground up using <strong>HTML</strong> and <strong>CSS</strong>. This site serves as a digital showcase of my journey in web development, featuring distinct pages including my <Strong>portfolio, resume, and an about me section</Strong>. Each page reflects my skills, experiences, and creative endeavors, offering visitors insight into who I am and what I do.
-
-While the site is complete, it’s just the beginning! I am committed to continually improving it as I learn more about web development, with plans to enhance its functionality and aesthetics by adding new features. Join me as I explore the endless possibilities of the digital world!
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class = "More_Projects">
-            <h3>More Projects Coming Soon!</h3>
-        </div>
-        
-
-    </main>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="dot"></span>VISHNU<span class="tick">_</span>ALACHI</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+      <ul class="nav-links">
+        <li><a href="index.html">/home</a></li>
+        <li><a href="portfolio.html" class="active">/projects</a></li>
+        <li><a href="resume.html">/resume</a></li>
+        <li><a href="blog.html">/blog</a></li>
+        <li><a href="contact.html">/contact</a></li>
+      </ul>
     </div>
-    <footer class = "footer">© 2024 <Vishnu's Website> | All Rights Reserved</footer>
-  </body>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="index.html">/home</a></li>
+      <li><a href="portfolio.html">/projects</a></li>
+      <li><a href="resume.html">/resume</a></li>
+      <li><a href="blog.html">/blog</a></li>
+      <li><a href="contact.html">/contact</a></li>
+    </ul>
+  </header>
+
+  <section class="wrap" style="padding-top:52px;">
+    <span class="eyebrow">// build log</span>
+    <h1 style="font-family:var(--sans); font-weight:700; font-size:clamp(2.2rem,5vw,3.4rem); color:#fff; letter-spacing:-0.03em; margin-top:16px;">Projects</h1>
+    <p style="color:var(--ink-soft); max-width:40rem; margin-top:14px;">
+      AI agent systems, a game-playing engine, learning hardware, and products I run end to end.
+      Swipe, drag, or use the arrows to browse the build log.
+    </p>
+  </section>
+
+  <section class="wrap" style="padding-top:30px; padding-bottom:20px;">
+    <div class="carousel-head">
+      <div class="dots" id="carouselDots"></div>
+      <div class="arrows">
+        <button id="carouselPrev" aria-label="Previous">‹</button>
+        <button id="carouselNext" aria-label="Next">›</button>
+      </div>
+    </div>
+
+    <div class="track" id="carouselTrack">
+
+      <!-- Findr (feature) -->
+      <article class="panel ticks pcard feature">
+        <div class="row-top">
+          <span class="idx">01 / FINDR</span>
+          <span class="chip live"><span class="led"></span>Live · Beta soon</span>
+        </div>
+        <h3>Findr</h3>
+        <p class="sub">findr.page · founder</p>
+        <p class="body">
+          A campus-first discovery platform I'm building and running end to end, live now at
+          <a href="https://findr.page" target="_blank" rel="noopener">findr.page</a>. Findr helps students actually
+          <em>find things around them</em> — events, communities, gigs, and resources — in one place, instead of the
+          scattered mess of group chats, flyers, and Instagram stories people rely on today. In San Luis Obispo there
+          isn't a single properly-built product that does this well, and that gap is exactly what I'm filling.
+          I'm mid-way through a full redesign to sharpen the UI/UX and make it production-ready, with beta testing
+          launching at my Cal&nbsp;Poly campus soon.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">Full-stack</span><span class="tag">Product</span><span class="tag">UI/UX</span></div>
+        <div class="links"><a href="https://findr.page" target="_blank" rel="noopener">Visit live site ↗</a></div>
+      </article>
+
+      <!-- Oracle DIT Tools -->
+      <article class="panel ticks pcard">
+        <div class="row-top">
+          <span class="idx">02 / ORACLE-DIT</span>
+          <span class="chip prod"><span class="led"></span>In production</span>
+        </div>
+        <h3>Oracle DIT Tools</h3>
+        <p class="sub">Codex-native AI operations platform</p>
+        <p class="body">
+          An AI operations layer, not a chatbot wrapper. It lets an agent (Codex) turn requests like
+          "is DITA up?", "reserve a DIT", or "run VM.Check-config" into <em>approved</em> internal Oracle operations.
+          A thin Codex plugin talks to a Python MCP server that exposes business-level tools, maps them to allowlisted
+          Jenkins jobs, and returns clean results. I designed it to be safe by construction: signed stateless status
+          handles for async jobs, credential redaction, owner-scoped polling, and separate DIT/VM controllers — all
+          covered by unit and evaluator tests.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Jenkins</span><span class="tag">AI&nbsp;Agents</span></div>
+        <p class="dimline" style="margin-top:16px;">Internal Oracle project — source not public.</p>
+      </article>
+
+      <!-- Robot Arm + ML -->
+      <article class="panel ticks pcard">
+        <div class="row-top">
+          <span class="idx">03 / ROBOT-ARM</span>
+          <span class="chip dev"><span class="led"></span>Building</span>
+        </div>
+        <h3>Robot Arm + ML</h3>
+        <p class="sub">Applied machine learning &amp; computer vision</p>
+        <p class="body">
+          An ongoing project applying machine learning to an existing robotic arm — training it to improve its
+          motion and to detect and pick up objects using computer vision. The longer-term goal is to integrate two
+          robotic arms so they can coordinate and work together on shared tasks. It's where my love of mechanical
+          building meets real ML: perception, control, and getting hardware to do something useful in the physical world.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">Machine&nbsp;Learning</span><span class="tag">Computer&nbsp;Vision</span><span class="tag">Robotics</span></div>
+      </article>
+
+      <!-- Poker AI -->
+      <article class="panel ticks pcard">
+        <div class="row-top">
+          <span class="idx">04 / POKER-AI</span>
+          <span class="chip done"><span class="led"></span>Complete</span>
+        </div>
+        <h3>Poker AI</h3>
+        <p class="sub">Texas Hold'em agent · CSC&nbsp;480</p>
+        <p class="body">
+          A Texas Hold'em bot built on <code>pypokerengine</code> that reasons under uncertainty. A Monte Carlo engine
+          estimates win probability from thousands of simulated rollouts, an opponent-modeling layer tracks how each
+          player behaves over time, and a pot-odds module ties it into disciplined betting decisions. I built a
+          benchmark suite that pits agent variants against each other to measure exactly how much each feature adds —
+          plus a pygame UI so you can sit down and play against it.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">Python</span><span class="tag">Monte&nbsp;Carlo</span><span class="tag">Game&nbsp;AI</span></div>
+        <div class="links"><a href="https://github.com/Vishnu-Alachi123/CSC480" target="_blank" rel="noopener">View repo ↗</a></div>
+      </article>
+
+      <!-- LeetSwipe -->
+      <article class="panel ticks pcard">
+        <div class="row-top">
+          <span class="idx">05 / LEETSWIPE</span>
+          <span class="chip dev"><span class="led"></span>In development</span>
+        </div>
+        <h3>LeetSwipe</h3>
+        <p class="sub">Swipe your way through interview prep</p>
+        <p class="body">
+          Interview grinding, reimagined as a feed. LeetSwipe turns LeetCode practice into a Tinder-style swipe
+          experience — flick through problems, save the ones worth revisiting, and get fresh questions generated on
+          demand. The React&nbsp;Native front end sits on a Python backend where AI agents generate and curate problems,
+          backed by MongoDB and a LeetCode scraping pipeline. It's built to make consistent practice feel low-friction
+          instead of intimidating.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">React&nbsp;Native</span><span class="tag">AI&nbsp;Agents</span><span class="tag">MongoDB</span><span class="tag">Python</span></div>
+        <div class="links"><a href="https://github.com/Vishnu-Alachi123/Leetswipe" target="_blank" rel="noopener">View repo ↗</a></div>
+      </article>
+
+      <!-- Focus Day -->
+      <article class="panel ticks pcard">
+        <div class="row-top">
+          <span class="idx">06 / FOCUS-DAY</span>
+          <span class="chip dev"><span class="led"></span>In development</span>
+        </div>
+        <h3>Focus Day</h3>
+        <p class="sub">A planner built for a distractible brain</p>
+        <p class="body">
+          I get distracted easily, and every traditional to-do app made it worse — endless backlogs, notifications,
+          and guilt. So I built Focus Day for myself: instead of an infinite list, it forces a small, prioritized plan
+          for <em>today</em>, color-coded by urgency (now / soon / later) in a calm interface designed to lower the
+          overwhelm that makes me freeze. It genuinely changed how I plan my tasks — fewer things in front of me,
+          more actually getting done. What started as a personal fix is becoming a real productivity tool for students
+          who think the way I do.
+        </p>
+        <div class="tags" style="margin-top:16px;"><span class="tag">JavaScript</span><span class="tag">Productivity</span><span class="tag">ADHD-friendly</span></div>
+        <div class="links"><a href="https://github.com/Vishnu-Alachi123/focus-day" target="_blank" rel="noopener">View repo ↗</a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:80px;">
+    <div class="panel ticks" style="padding:34px; text-align:center;">
+      <h2 style="font-family:var(--sans); color:#fff; font-size:1.4rem;">More in the workshop</h2>
+      <p style="color:var(--ink-soft); margin-top:8px;">I'm always building. Explore the source or reach out to collaborate.</p>
+      <div style="display:flex; justify-content:center; gap:12px; margin-top:20px; flex-wrap:wrap;">
+        <a href="https://github.com/Vishnu-Alachi123" target="_blank" rel="noopener" class="btn btn-primary">MY&nbsp;GITHUB ↗</a>
+        <a href="contact.html" class="btn btn-ghost">CONTACT&nbsp;ME</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span>© 2026 VISHNU ALACHI · BUILT FROM SCRATCH</span>
+      <div class="foot-links">
+        <a href="https://github.com/Vishnu-Alachi123" target="_blank" rel="noopener">GITHUB</a>
+        <a href="https://www.linkedin.com/in/vishnu-alachi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
 </html>

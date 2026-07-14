@@ -1,32 +1,63 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Vishnu's Website</title>
-        <link rel="stylesheet" href="styles (1).css" />
-    </head>
-  <body>
-    <div class = "content">
-    <nav Class = "navbar">
-        <h1 class = "logo">
-            <a href = "index.html">
-                Vishnu's Website
-                <!-- add drawing -->
-            </a>
-        </h1>
-        <ul class = "nav_list">
-            <li><a href = "index.html">Home</a></li>
-            <li><a href = "blog.html">Blog</a></li>
-            <li><a href = "contact.html">Contact</a></li>
-            <li><a href = "portfolio.html">Portfolio</a></li>
-            <li><a href = "resume.html">Resume</a></li>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Vishnu Alachi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
 
-        </ul>
-
-    </nav>
-    <main>
-        <h2 class = "blog">No Uploads yet. Check again later</h2>
-    </main>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="dot"></span>VISHNU<span class="tick">_</span>ALACHI</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+      <ul class="nav-links">
+        <li><a href="index.html">/home</a></li>
+        <li><a href="portfolio.html">/projects</a></li>
+        <li><a href="resume.html">/resume</a></li>
+        <li><a href="blog.html" class="active">/blog</a></li>
+        <li><a href="contact.html">/contact</a></li>
+      </ul>
     </div>
-    <footer class = "footer">© 2024 <Vishnu's Website> | All Rights Reserved</footer>
-  </body>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="index.html">/home</a></li>
+      <li><a href="portfolio.html">/projects</a></li>
+      <li><a href="resume.html">/resume</a></li>
+      <li><a href="blog.html">/blog</a></li>
+      <li><a href="contact.html">/contact</a></li>
+    </ul>
+  </header>
+
+  <main class="wrap" style="padding-top:64px; padding-bottom:90px;">
+    <span class="eyebrow">// field notes</span>
+    <h1 style="font-family:var(--sans); font-weight:700; font-size:clamp(2.2rem,5vw,3.4rem); color:#fff; letter-spacing:-0.03em; margin-top:16px;">Writing</h1>
+
+    <div class="panel ticks" style="padding:48px; margin-top:34px; text-align:center; border-style:dashed;">
+      <p class="mono" style="color:var(--cyan); letter-spacing:.1em;">// STATUS: DRAFTING</p>
+      <h2 style="font-family:var(--sans); color:#fff; font-size:1.4rem; margin-top:12px;">No posts published yet</h2>
+      <p style="color:var(--ink-soft); max-width:34rem; margin:12px auto 0;">
+        I'm planning to write about building AI agents, teaching a robot arm to see, and shipping Findr to beta.
+        Check back soon.
+      </p>
+      <a href="portfolio.html" class="btn btn-primary" style="margin-top:22px;">EXPLORE&nbsp;PROJECTS →</a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span>© 2026 VISHNU ALACHI · BUILT FROM SCRATCH</span>
+      <div class="foot-links">
+        <a href="https://github.com/Vishnu-Alachi123" target="_blank" rel="noopener">GITHUB</a>
+        <a href="https://www.linkedin.com/in/vishnu-alachi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
 </html>
