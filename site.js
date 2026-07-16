@@ -70,7 +70,8 @@ const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
 })();
 
-// Animated counters (about panel) — count up on first reveal
+// Animated counters (about panel) — count up on first reveal.
+// Public repo count is fetched live from GitHub (cached 1h, falls back to the markup value).
 (function () {
   const nums = document.querySelectorAll('.counters .n[data-count]');
   if (!nums.length) return;
@@ -85,10 +86,39 @@ const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     };
     requestAnimationFrame(step);
   };
-  const io = new IntersectionObserver((entries, obs) => {
-    entries.forEach((e) => { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } });
-  }, { threshold: 0.5 });
-  nums.forEach((el) => io.observe(el));
+  const startObserver = () => {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    nums.forEach((el) => io.observe(el));
+  };
+
+  const repoEl = document.getElementById('repoCount');
+  if (!repoEl) { startObserver(); return; }
+
+  const KEY = 'gh_repo_count_v1';
+  let started = false;
+  const begin = () => { if (started) return; started = true; startObserver(); };
+  try {
+    const cached = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (cached && Date.now() - cached.at < 3600e3 && typeof cached.count === 'number') {
+      repoEl.dataset.count = cached.count;
+      begin();
+      return;
+    }
+  } catch (e) {}
+  // Give the API a moment to respond before revealing; fall back to the static count either way.
+  setTimeout(begin, 1200);
+  fetch('https://api.github.com/users/Vishnu-Alachi123')
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((user) => {
+      if (typeof user.public_repos === 'number') {
+        repoEl.dataset.count = user.public_repos;
+        try { localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), count: user.public_repos })); } catch (e) {}
+      }
+    })
+    .catch(() => { /* keep the static fallback */ })
+    .finally(begin);
 })();
 
 // GitHub activity ticker — last pushes, cached 1h, hides on failure
