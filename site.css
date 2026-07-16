@@ -237,6 +237,60 @@ footer.foot { border-top: 1px solid var(--line); }
 .stat-row b { color: #fff; }
 .dimline { font-family: var(--mono); font-size: .68rem; color: var(--muted); letter-spacing: .1em; }
 
+/* ---------- Findr hero ---------- */
+.findr-search {
+  position: absolute; top: 34px; left: 14px; right: 14px;
+  display: flex; align-items: center; gap: 8px;
+  height: 34px; padding: 0 12px;
+  background: rgba(13,17,23,0.85); border: 1px solid rgba(82,199,255,0.35);
+  border-radius: 17px; font-family: var(--mono); font-size: 0.75rem; color: var(--ink-soft);
+  pointer-events: none; backdrop-filter: blur(4px);
+}
+.findr-search-icon { color: var(--cyan); font-size: 0.95rem; }
+.findr-caret {
+  width: 7px; height: 14px; background: var(--cyan); opacity: .8;
+  animation: findrblink 1.1s steps(1) infinite;
+}
+@keyframes findrblink { 50% { opacity: 0; } }
+.findr-brand {
+  margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 0.85rem;
+  color: var(--cyan); display: flex; align-items: baseline; gap: 3px;
+}
+.findr-brand i { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); }
+@media (prefers-reduced-motion: reduce) { .findr-caret { animation: none; } }
+
+/* ---------- Scroll progress hairline ---------- */
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--cyan), rgba(82,199,255,0.4));
+  z-index: 60; pointer-events: none;
+  box-shadow: 0 0 8px rgba(82,199,255,0.5);
+}
+
+/* ---------- GitHub activity ticker ---------- */
+.gh-ticker {
+  margin-top: 22px; border: 1px dashed var(--line-2); border-radius: 10px;
+  padding: 10px 14px; font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+  display: none; flex-direction: column; gap: 6px;
+}
+.gh-ticker.on { display: flex; }
+.gh-ticker .gh-head { color: var(--cyan); letter-spacing: 0.15em; font-size: 0.66rem; }
+.gh-ticker a { color: var(--ink-soft); }
+.gh-ticker a:hover { color: var(--cyan); }
+.gh-ticker .t { color: var(--muted); }
+
+/* ---------- Counters row ---------- */
+.counters { display: flex; gap: 26px; margin-top: 20px; }
+.counters .c { font-family: var(--mono); }
+.counters .n { color: var(--cyan); font-size: 1.4rem; font-weight: 700; display: block; }
+.counters .l { color: var(--muted); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* ---------- Card tilt (JS sets --rx/--ry) ---------- */
+.panel.tilt, .panel.tilt.reveal.in {
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+}
+
 /* ---------- Hover + reveal ---------- */
 .panel { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 a.panel:hover { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 10px 30px -12px rgba(82,199,255,.25); }

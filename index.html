@@ -62,12 +62,29 @@
         <span><b>Oracle</b> · AI ops tooling</span>
         <span><b>Grad</b> · Dec 2026</span>
       </div>
+      <div class="gh-ticker" id="ghTicker" aria-live="off">
+        <span class="gh-head">// NOW BUILDING — LIVE FROM GITHUB</span>
+      </div>
     </div>
 
     <div style="position:relative;">
-      <div id="hero-canvas" style="width:100%; height:440px; border:1px solid var(--line-2); border-radius:var(--radius); overflow:hidden; background:radial-gradient(60% 60% at 60% 30%, rgba(82,199,255,.08), transparent);"></div>
-      <span class="dimline" style="position:absolute; top:10px; left:14px;">FIG.01 — ARTICULATED ARM · move cursor</span>
-      <span class="dimline" style="position:absolute; bottom:10px; right:14px; color:var(--cyan);">6&nbsp;DOF · LIVE RENDER</span>
+      <div id="hero-canvas" style="position:relative; width:100%; height:440px; border:1px solid var(--line-2); border-radius:var(--radius); overflow:hidden; background:radial-gradient(60% 60% at 60% 30%, rgba(82,199,255,.08), transparent);"></div>
+      <span class="dimline" style="position:absolute; top:10px; left:14px;">FIG.01 — FINDR DISCOVERY RADAR · move cursor</span>
+      <span class="dimline" style="position:absolute; bottom:10px; right:14px; color:var(--cyan);">LIVE · CAMPUS&nbsp;MAP</span>
+    </div>
+  </section>
+
+  <!-- FEATURED: FINDR -->
+  <section class="wrap" style="padding-top:8px; padding-bottom:8px;">
+    <div class="panel ticks pcard feature" style="max-width:none; flex-direction:row; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between; padding:32px;">
+      <div style="max-width:44rem;">
+        <span class="chip prod"><span class="led"></span>Featured · Shipping to beta</span>
+        <h3 style="margin-top:14px;">Findr — the product I'm pushing out</h3>
+        <p class="body" style="margin-top:10px;">My main focus: a location-aware platform I'm building and taking to beta on the
+          Cal Poly SLO campus. Currently mid-redesign to sharpen the UI/UX and make it production-ready. There isn't
+          anything properly built for this in San Luis Obispo yet — that's the gap I'm filling.</p>
+      </div>
+      <a href="https://findr.page" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:center;">VISIT&nbsp;FINDR ↗</a>
     </div>
   </section>
 
@@ -86,8 +103,10 @@
         <p style="color:var(--ink-soft); margin-top:14px;">
           Lately my coursework has leaned into data and machine learning — knowledge discovery in databases,
           artificial intelligence, and linear models — and it shows up directly in what I build: Findr, AI
-          agents that operate real infrastructure, and hardware that learns from what it sees. Away from the
-          keyboard I play basketball and soccer, draw, and tinker with mechanical builds.
+          agents that operate real infrastructure, and hardware that learns from what it sees.
+        </p>
+        <p class="dimline" style="margin-top:18px; border-top:1px dashed var(--line-2); padding-top:14px;">
+          OFF&nbsp;THE&nbsp;CLOCK&nbsp;→ basketball · soccer · drawing · mechanical builds
         </p>
       </div>
       <div class="panel ticks" style="padding:30px;">
@@ -99,24 +118,15 @@
           <span class="tag">AI&nbsp;Agents</span><span class="tag">Computer&nbsp;Vision</span><span class="tag">Jenkins</span>
           <span class="tag">Three.js</span><span class="tag">LLVM</span>
         </div>
-        <div class="dimline" style="margin-top:26px; border-top:1px dashed var(--line-2); padding-top:16px;">
+        <div class="counters">
+          <span class="c"><span class="n" data-count="6">0</span><span class="l">Projects</span></span>
+          <span class="c"><span class="n" data-count="3">0</span><span class="l">Live demos</span></span>
+          <span class="c"><span class="n" data-count="7">0</span><span class="l">Public repos</span></span>
+        </div>
+        <div class="dimline" style="margin-top:22px; border-top:1px dashed var(--line-2); padding-top:16px;">
           CURRENTLY&nbsp;→ building AI developer tools &amp; shipping Findr to beta
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FEATURED -->
-  <section class="wrap" style="padding-bottom:24px;">
-    <div class="panel ticks pcard feature" style="max-width:none; flex-direction:row; align-items:center; gap:24px; flex-wrap:wrap; justify-content:space-between; padding:32px;">
-      <div style="max-width:44rem;">
-        <span class="chip prod"><span class="led"></span>Featured · Shipping to beta</span>
-        <h3 style="margin-top:14px;">Findr — the product I'm pushing out</h3>
-        <p class="body" style="margin-top:10px;">My main focus: a location-aware platform I'm building and taking to beta on the
-          Cal Poly SLO campus. Currently mid-redesign to sharpen the UI/UX and make it production-ready. There isn't
-          anything properly built for this in San Luis Obispo yet — that's the gap I'm filling.</p>
-      </div>
-      <a href="https://findr.page" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:center;">VISIT&nbsp;FINDR ↗</a>
     </div>
   </section>
 
@@ -143,8 +153,7 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-  <script src="hero-arm.js"></script>
+  <script src="hero-findr.js"></script>
   <script src="site.js"></script>
 </body>
 </html>
