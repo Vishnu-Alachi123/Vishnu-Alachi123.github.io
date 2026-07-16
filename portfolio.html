@@ -79,18 +79,19 @@
         <h3>Findr</h3>
         <p class="sub">findr.page · founder</p>
         <p class="body">
-          A campus-first discovery platform I built and now run end to end, live at
+          A campus-first discovery app I built and now run end to end, live at
           <a href="https://findr.page" target="_blank" rel="noopener">findr.page</a>. Findr helps students
           <em>find what's actually around them</em> — events, communities, gigs, and resources — in one place,
-          replacing the scattered mix of group chats, flyers, and social posts students rely on today. San Luis
-          Obispo doesn't yet have a dedicated product built for this, and closing that gap is the goal. The
-          platform is currently in a full UI/UX redesign ahead of beta testing at Cal&nbsp;Poly.
+          replacing the scattered mix of group chats, flyers, and social posts students rely on today, with a
+          third-party mapping API underneath the location layer. San Luis Obispo doesn't yet have a dedicated
+          product built for this, and closing that gap is the goal. The app is currently in a full UI/UX
+          redesign ahead of beta testing at Cal&nbsp;Poly.
         </p>
         <div class="tags" style="margin-top:16px;"><span class="tag">Full-stack</span><span class="tag">Product</span><span class="tag">UI/UX</span></div>
         <div class="links"><a href="https://findr.page" target="_blank" rel="noopener">Visit live site ↗</a></div>
       </article>
 
-      <!-- Oracle DIT Tools -->
+      <!-- Oracle AI Operations Agent -->
       <article class="panel ticks pcard">
         <div class="pgraphic"><svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg">
           <rect x="18" y="52" width="76" height="26" rx="4" fill="none" stroke="#6f7a88" stroke-width="1.5"/>
@@ -102,24 +103,24 @@
           <path class="g-flow" d="M202 76 H298" stroke="#52c7ff" stroke-width="2"/>
           <rect x="300" y="40" width="86" height="20" rx="3" fill="none" stroke="#ffb454" stroke-width="1.5"/>
           <rect x="300" y="70" width="86" height="20" rx="3" fill="none" stroke="#6f7a88" stroke-width="1.5"/>
-          <text x="308" y="54" fill="#ffb454" font-family="monospace" font-size="8">DIT-GetAvail</text>
-          <text x="308" y="84" fill="#aab4c1" font-family="monospace" font-size="8">VM.Check-cfg</text>
+          <text x="308" y="54" fill="#ffb454" font-family="monospace" font-size="8">get-status</text>
+          <text x="308" y="84" fill="#aab4c1" font-family="monospace" font-size="8">run-check</text>
         </svg></div>
         <div class="row-top">
-          <span class="idx">02 / ORACLE-DIT</span>
+          <span class="idx">02 / ORACLE-OPS</span>
           <span class="chip prod"><span class="led"></span>In production</span>
         </div>
-        <h3>Oracle DIT Tools</h3>
-        <p class="sub">Codex-native AI operations platform</p>
+        <h3>AI Operations Agent</h3>
+        <p class="sub">Codex-native infrastructure automation</p>
         <p class="body">
-          An AI operations layer, not a chatbot wrapper. It lets an agent (Codex) turn requests like
-          "is DITA up?", "reserve a DIT", or "run VM.Check-config" into <em>approved</em> internal Oracle operations.
-          A thin Codex plugin talks to a Python MCP server that exposes business-level tools, maps them to allowlisted
-          Jenkins jobs, and returns clean results. I designed it to be safe by construction: signed stateless status
-          handles for async jobs, credential redaction, owner-scoped polling, and separate DIT/VM controllers — all
-          covered by unit and evaluator tests.
+          An AI operations layer, not a chatbot wrapper. It lets an agent (Codex) turn plain-English requests
+          like "is DITA up?" or "reserve a DIT" into <em>approved</em> internal operations — no dashboards, no
+          copied scripts, no leaked credentials. A thin Codex plugin talks to a Python MCP server that exposes
+          business-level tools, validates and routes each request, and returns clean, structured results. I
+          designed it to be safe by construction: signed stateless status handles for async jobs, credential
+          redaction, and owner-scoped polling — all covered by unit and evaluator tests.
         </p>
-        <div class="tags" style="margin-top:16px;"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Jenkins</span><span class="tag">AI&nbsp;Agents</span></div>
+        <div class="tags" style="margin-top:16px;"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">Automation</span><span class="tag">AI&nbsp;Agents</span></div>
         <p class="dimline" style="margin-top:16px;">Internal Oracle project — source not public.</p>
       </article>
 
@@ -218,8 +219,8 @@
         <h3>LeetSwipe</h3>
         <p class="sub">Swipe your way through interview prep</p>
         <p class="body">
-          Interview grinding, reimagined as a feed. LeetSwipe turns LeetCode practice into a Tinder-style swipe
-          experience — flick through questions, tap to check your answer with an explanation, and save the ones
+          Interview grinding, reimagined as a feed. LeetSwipe turns LeetCode practice into a swipeable card
+          format — flick through questions, tap to check your answer with an explanation, and save the ones
           worth revisiting. The React&nbsp;Native app is paired with a Python pipeline that uses an LLM (with
           structured output) to generate conceptual multiple-choice questions from real problems, backed by MongoDB.
           <a href="https://vishnu-alachi123.github.io/Leetswipe/" target="_blank" rel="noopener">Try the live web demo →</a>
