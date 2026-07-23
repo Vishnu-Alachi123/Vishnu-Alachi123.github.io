@@ -1,0 +1,84 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.panel {
+  padding: 28px;
+}
+.eduRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+}
+.eduRow .school {
+  color: #fff;
+  font-weight: 600;
+}
+.eduRow .detail {
+  color: var(--ink-soft);
+}
+.gpa {
+  font-family: var(--mono);
+  color: var(--cyan);
+}
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 18px;
+}
+.roleHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+}
+.roleHead .title {
+  color: #fff;
+  font-weight: 600;
+}
+.roleHead .org {
+  font-family: var(--mono);
+  color: var(--cyan);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+.points {
+  margin-top: 10px;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.94rem;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.list {
+  margin-top: 16px;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.94rem;
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@media (max-width: 720px) {
+  .two {
+    grid-template-columns: 1fr;
+  }
+}

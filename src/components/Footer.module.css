@@ -1,0 +1,23 @@
+.foot {
+  border-top: 1px solid var(--line);
+}
+.inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.links {
+  display: flex;
+  gap: 20px;
+}
+.inner a:hover {
+  color: var(--cyan);
+}
