@@ -32,6 +32,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Enables Pages and switches the source to "GitHub Actions" (build_type:
+      # workflow) using the CI token, so the built artifact is served instead
+      # of the raw branch — no manual repo-settings change required.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Build
         run: npm run build
 
