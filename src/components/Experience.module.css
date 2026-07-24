@@ -55,19 +55,24 @@
   gap: 6px;
   font-size: 0.94rem;
 }
-.two {
+.courseGrid {
+  list-style: none;
+  margin-top: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.list {
-  margin-top: 16px;
-  padding-left: 18px;
+  gap: 10px 24px;
   color: var(--ink-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
   font-size: 0.94rem;
+}
+.courseGrid li {
+  padding-left: 20px;
+  position: relative;
+}
+.courseGrid li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
 }
 .head {
   display: flex;
@@ -78,7 +83,7 @@
 }
 
 @media (max-width: 720px) {
-  .two {
+  .courseGrid {
     grid-template-columns: 1fr;
   }
 }

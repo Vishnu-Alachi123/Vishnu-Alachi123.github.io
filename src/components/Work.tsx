@@ -13,9 +13,9 @@ export default function Work() {
         <span className="eyebrow">// selected work</span>
         <h2>Things I&apos;ve built and shipped.</h2>
         <p>
-          A campus product with real users, an AI operations agent running in production, learning
-          hardware, and a few tools I use myself. Each one is something I took from idea to working
-          software.
+          A campus product with real users, an AI operations agent running in production, applied
+          machine learning, and a few tools I use myself. Each one is something I took from idea to
+          working software.
         </p>
       </div>
 
