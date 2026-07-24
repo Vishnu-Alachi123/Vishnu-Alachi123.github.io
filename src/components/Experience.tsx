@@ -1,8 +1,10 @@
-import { roles, skills, coursework } from '../data/experience';
+import { useResume } from '../hooks/useResume';
 import Reveal from './Reveal';
 import styles from './Experience.module.css';
 
 export default function Experience() {
+  const { roles, education, coursework } = useResume();
+
   return (
     <section id="experience" className="wrap section">
       <div className={`section-head ${styles.head}`}>
@@ -21,14 +23,12 @@ export default function Experience() {
             <span className="eyebrow">// education</span>
             <div className={styles.eduRow}>
               <div>
-                <p className={styles.school}>
-                  California Polytechnic State University, San Luis Obispo
-                </p>
+                <p className={styles.school}>{education.school}</p>
                 <p className={styles.detail}>
-                  B.S. in Software Engineering · Third year · Graduating December 2026
+                  {education.degree} · {education.detail}
                 </p>
               </div>
-              <p className={styles.gpa}>GPA 3.4</p>
+              <p className={styles.gpa}>GPA {education.gpa}</p>
             </div>
           </section>
         </Reveal>
@@ -38,7 +38,7 @@ export default function Experience() {
             <span className="eyebrow">// roles</span>
             <div className={styles.roles}>
               {roles.map((r) => (
-                <div key={r.org}>
+                <div key={`${r.org}-${r.title}`}>
                   <div className={styles.roleHead}>
                     <p className={styles.title}>{r.title}</p>
                     <p className={styles.org}>{r.org.toUpperCase()}</p>
@@ -54,30 +54,16 @@ export default function Experience() {
           </section>
         </Reveal>
 
-        <div className={styles.two}>
-          <Reveal>
-            <section className={`panel ticks ${styles.panel}`} style={{ height: '100%' }}>
-              <span className="eyebrow">// skills</span>
-              <div className="tags" style={{ marginTop: 16 }}>
-                {skills.map((s) => (
-                  <span key={s} className="tag">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </section>
-          </Reveal>
-          <Reveal delay={80}>
-            <section className={`panel ticks ${styles.panel}`} style={{ height: '100%' }}>
-              <span className="eyebrow">// coursework</span>
-              <ul className={styles.list}>
-                {coursework.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-            </section>
-          </Reveal>
-        </div>
+        <Reveal delay={80}>
+          <section className={`panel ticks ${styles.panel}`}>
+            <span className="eyebrow">// coursework</span>
+            <ul className={styles.courseGrid}>
+              {coursework.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </section>
+        </Reveal>
       </div>
     </section>
   );

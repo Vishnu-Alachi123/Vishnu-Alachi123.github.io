@@ -1,3 +1,4 @@
+import Backdrop from './components/Backdrop';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Work from './components/Work';
@@ -10,6 +11,7 @@ import ScrollProgress from './components/ScrollProgress';
 export default function App() {
   return (
     <>
+      <Backdrop />
       <ScrollProgress />
       <Nav />
       <main>
