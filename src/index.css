@@ -67,6 +67,13 @@ section[id] {
   scroll-margin-top: calc(var(--nav-h) + 18px);
 }
 
+/* content sits above the fixed ambient backdrop canvas (z-index: 0) */
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -308,55 +315,6 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* ---------- Project graphic animations ---------- */
-@keyframes dashflow {
-  to {
-    stroke-dashoffset: -24;
-  }
-}
-@keyframes radar {
-  0% {
-    r: 6;
-    opacity: 0.8;
-  }
-  100% {
-    r: 46;
-    opacity: 0;
-  }
-}
-@keyframes bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-.g-flow {
-  stroke-dasharray: 5 7;
-  animation: dashflow 1.4s linear infinite;
-}
-.g-radar {
-  animation: radar 2.6s ease-out infinite;
-}
-.g-bob {
-  animation: bob 3s ease-in-out infinite;
-  transform-origin: center;
-}
-.g-blink {
-  animation: blink 1.8s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -366,11 +324,5 @@ textarea:focus-visible {
   .reveal {
     opacity: 1;
     transform: none;
-  }
-  .g-flow,
-  .g-radar,
-  .g-bob,
-  .g-blink {
-    animation: none !important;
   }
 }

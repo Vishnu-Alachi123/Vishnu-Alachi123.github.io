@@ -1,15 +1,13 @@
 import type { Project } from '../data/projects';
-import ProjectGraphic from './ProjectGraphic';
+import ProjectPreview from './ProjectPreview';
 import styles from './ProjectCard.module.css';
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { id, index, title, sub, status, body, tags, links, note, featured } = project;
+  const { index, title, sub, status, body, tags, links, note, featured } = project;
 
   return (
     <article className={`panel ticks ${styles.card} ${featured ? styles.feature : ''}`}>
-      <div className={styles.graphic}>
-        <ProjectGraphic id={id} />
-      </div>
+      <ProjectPreview project={project} />
 
       <div className={styles.rowTop}>
         <span className={styles.idx}>{index}</span>

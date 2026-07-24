@@ -8,13 +8,14 @@ export interface ProjectLink {
 }
 
 export interface Project {
-  /** graphic id — see ProjectGraphic.tsx */
   id: string;
   index: string;
   title: string;
   sub: string;
   status: { kind: StatusKind; label: string };
   featured?: boolean;
+  /** live URL embedded as a preview in the card media area */
+  preview?: string;
   body: ReactNode;
   tags: string[];
   links?: ProjectLink[];
@@ -29,6 +30,7 @@ export const projects: Project[] = [
     sub: 'findr.page · founder',
     status: { kind: 'live', label: 'Live · Beta soon' },
     featured: true,
+    preview: 'https://findr.page',
     body: (
       <>
         A campus-first discovery app I built and now run end to end, live at{' '}
@@ -108,6 +110,7 @@ export const projects: Project[] = [
     title: 'LeetSwipe',
     sub: 'Swipe your way through interview prep',
     status: { kind: 'live', label: 'Live demo' },
+    preview: 'https://vishnu-alachi123.github.io/Leetswipe/',
     body: (
       <>
         Interview grinding, reimagined as a feed. LeetSwipe turns LeetCode practice into a swipeable
@@ -129,6 +132,7 @@ export const projects: Project[] = [
     title: 'Focus Day',
     sub: 'A planner built for a distractible brain',
     status: { kind: 'live', label: 'Live demo' },
+    preview: 'https://vishnu-alachi123.github.io/focus-day/',
     body: (
       <>
         Traditional to-do apps made focus harder for me — endless backlogs, notifications, and guilt
