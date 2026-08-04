@@ -1,0 +1,96 @@
+.wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--canvas);
+}
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+.total {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+
+.scroller {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.months {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 4px;
+  margin-left: 26px;
+}
+.monthLabel {
+  min-width: 13px;
+  font-size: 0.68rem;
+  color: var(--fg-subtle);
+  white-space: nowrap;
+}
+
+.body {
+  display: flex;
+  gap: 6px;
+}
+.dayLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+.dayLabel {
+  height: 10px;
+  font-size: 0.62rem;
+  line-height: 10px;
+  color: var(--fg-subtle);
+}
+
+.grid {
+  display: flex;
+  gap: 3px;
+}
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.day {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--level-0);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--fg-subtle);
+}
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.empty {
+  padding: 20px 0;
+  text-align: center;
+  color: var(--fg-subtle);
+  font-size: 0.85rem;
+}
