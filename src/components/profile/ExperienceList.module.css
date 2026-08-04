@@ -1,0 +1,60 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.expRow {
+  display: block;
+  min-width: 0;
+}
+.expTop {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.role {
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.at {
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+}
+.company {
+  color: var(--accent);
+  font-weight: 500;
+}
+.dates {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--fg-subtle);
+  white-space: nowrap;
+}
+.summary {
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.points li {
+  position: relative;
+  padding-left: 18px;
+}
+.points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fg-subtle);
+}

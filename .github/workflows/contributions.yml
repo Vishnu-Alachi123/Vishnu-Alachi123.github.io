@@ -1,0 +1,36 @@
+name: Refresh GitHub contributions
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch contribution calendar
+        env:
+          CONTRIB_GH_TOKEN: ${{ secrets.CONTRIB_GH_TOKEN }}
+        run: node scripts/fetch-contributions.mjs
+
+      # If CONTRIB_GH_TOKEN isn't set yet, the script writes the same
+      # { available: false } placeholder that's already committed, so this
+      # is a no-op diff and nothing gets pushed.
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- public/data/contributions-real.json; then
+            echo "No change to contribution data."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/contributions-real.json
+          git commit -m "chore: refresh GitHub contribution calendar"
+          git push

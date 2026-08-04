@@ -1,0 +1,110 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--canvas);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+.field input,
+.field textarea {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--fg);
+  background: var(--canvas-inset);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  width: 100%;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+}
+.err {
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+.invalid input,
+.invalid textarea {
+  border-color: var(--danger);
+}
+.status {
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+.status.bad {
+  color: var(--danger);
+}
+.honey {
+  display: none;
+}
+
+.success {
+  text-align: center;
+  padding: 24px 8px;
+}
+.success h3 {
+  color: var(--fg);
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+.success p {
+  color: var(--fg-muted);
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.channel {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.channel:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.channelLabel {
+  font-size: 0.7rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.channelValue {
+  color: var(--fg);
+  font-weight: 600;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 780px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

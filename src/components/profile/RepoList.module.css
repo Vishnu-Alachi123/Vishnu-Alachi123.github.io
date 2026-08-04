@@ -1,0 +1,131 @@
+.pinnedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.pinnedCard {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--canvas);
+  transition: border-color 0.12s ease;
+}
+.pinnedCard:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.pinnedHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--fg-muted);
+}
+.pinnedIcon {
+  flex-shrink: 0;
+}
+.pinnedName {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.pinnedDesc {
+  color: var(--fg-muted);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.pinnedMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+.langDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: -1px;
+}
+.langMeta {
+  display: inline-flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* content inside each ExpandableCard summary/detail */
+.repoRow {
+  display: block;
+  min-width: 0;
+}
+.repoTop {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.repoName {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.visibility {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 7px;
+  line-height: 18px;
+}
+.repoDesc {
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+.repoMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+.repoTags {
+  margin-top: 10px;
+}
+.repoDetail p,
+.repoDetail div {
+  color: var(--fg-muted);
+}
+.repoDetail a {
+  color: var(--accent);
+}
+.repoLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+.repoNote {
+  font-size: 0.78rem;
+  color: var(--fg-subtle);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .pinnedGrid {
+    grid-template-columns: 1fr;
+  }
+}

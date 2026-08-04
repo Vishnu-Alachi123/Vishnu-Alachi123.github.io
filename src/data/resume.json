@@ -17,6 +17,7 @@
     {
       "title": "Software Development Intern",
       "org": "Oracle",
+      "dates": "TODO: add exact dates",
       "points": [
         "Built a Codex-native AI operations agent: an MCP server that exposes approved internal operations to an AI agent through natural language.",
         "Designed a secure, queue-aware backend — allowlisted operations, signed stateless status handles, credential redaction, and owner-scoped polling.",
@@ -26,6 +27,7 @@
     {
       "title": "Software Development Intern",
       "org": "Exalture",
+      "dates": "TODO: add exact dates",
       "points": [
         "Debugged and refactored anti-collision software for satellites.",
         "Contributed to the machine-learning component of the satellite project.",
@@ -35,6 +37,7 @@
     {
       "title": "Head of Social Media Outreach",
       "org": "Theruvoram NGO",
+      "dates": "TODO: add exact dates",
       "points": [
         "Designed the blog webpage for the non-profit.",
         "Wrote biweekly blog posts and managed social media.",
