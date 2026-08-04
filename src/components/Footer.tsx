@@ -7,15 +7,6 @@ type Props = {
 export default function Footer({ onAdminClick }: Props) {
   return (
     <footer className={styles.foot}>
-      <button
-        type="button"
-        className={styles.hiddenLogin}
-        onClick={onAdminClick}
-        aria-label="Admin login"
-        title="Admin login"
-      >
-        Admin
-      </button>
       <div className={styles.inner}>
         <div className={styles.row}>
           <span>© 2026 Vishnu Alachi</span>
@@ -27,6 +18,15 @@ export default function Footer({ onAdminClick }: Props) {
               LinkedIn
             </a>
             <a href="#contact">Contact</a>
+            <button
+              type="button"
+              className={styles.adminBtn}
+              onClick={onAdminClick}
+              aria-label="Admin login"
+              title="Edit your profile"
+            >
+              Admin
+            </button>
           </div>
         </div>
         <p className={styles.disclaimer}>
