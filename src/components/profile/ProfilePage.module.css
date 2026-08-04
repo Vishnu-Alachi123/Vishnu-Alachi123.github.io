@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  grid-template-columns: 296px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-top: 8px;
+}
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);
+}
+.content {
+  min-width: 0;
+}
+
+.graphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+  }
+}

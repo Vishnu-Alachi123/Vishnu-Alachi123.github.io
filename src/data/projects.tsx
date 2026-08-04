@@ -12,6 +12,8 @@ export interface Project {
   index: string;
   title: string;
   sub: string;
+  /** one-line, plain-text description (GitHub repo-list style) — distinct from `body`, which is the full detail */
+  summary: string;
   status: { kind: StatusKind; label: string };
   featured?: boolean;
   /** live URL embedded as a preview in the card media area */
@@ -28,6 +30,7 @@ export const projects: Project[] = [
     index: '01 / FINDR',
     title: 'Findr',
     sub: 'findr.page · founder',
+    summary: 'Campus-first discovery app for events, communities, gigs, and resources near you.',
     status: { kind: 'live', label: 'Live · Beta soon' },
     featured: true,
     preview: 'https://findr.page',
@@ -53,6 +56,7 @@ export const projects: Project[] = [
     index: '02 / ORACLE-OPS',
     title: 'AI Operations Agent',
     sub: 'Codex-native infrastructure automation',
+    summary: 'AI agent that turns plain-English requests into approved internal operations via MCP.',
     status: { kind: 'prod', label: 'In production' },
     body: (
       <>
@@ -73,6 +77,7 @@ export const projects: Project[] = [
     index: '03 / ROBOT-ARM',
     title: 'Robot Arm + ML',
     sub: 'Applied machine learning & computer vision',
+    summary: 'Training a robotic arm to see, grip, and eventually coordinate with a second arm.',
     status: { kind: 'dev', label: 'Building' },
     body: (
       <>
@@ -90,6 +95,7 @@ export const projects: Project[] = [
     index: '04 / POKER-AI',
     title: 'Poker AI',
     sub: "Texas Hold'em agent · CSC 480",
+    summary: "Monte Carlo Texas Hold'em bot with opponent modeling and a playable pygame UI.",
     status: { kind: 'done', label: 'Complete' },
     body: (
       <>
@@ -109,6 +115,7 @@ export const projects: Project[] = [
     index: '05 / LEETSWIPE',
     title: 'LeetSwipe',
     sub: 'Swipe your way through interview prep',
+    summary: 'Turns LeetCode practice into a swipeable card feed, backed by an LLM question pipeline.',
     status: { kind: 'live', label: 'Live demo' },
     preview: 'https://vishnu-alachi123.github.io/Leetswipe/',
     body: (
@@ -131,6 +138,7 @@ export const projects: Project[] = [
     index: '06 / FOCUS-DAY',
     title: 'Focus Day',
     sub: 'A planner built for a distractible brain',
+    summary: 'A calm, single-day planner with voice input, built for people who get overwhelmed by lists.',
     status: { kind: 'live', label: 'Live demo' },
     preview: 'https://vishnu-alachi123.github.io/focus-day/',
     body: (
@@ -138,8 +146,8 @@ export const projects: Project[] = [
         Traditional to-do apps made focus harder for me — endless backlogs, notifications, and guilt
         over unfinished lists. Focus Day takes the opposite approach: instead of an infinite list, it
         forces a small, prioritized plan for <em>today</em>, color-coded by urgency in a calm
-        interface designed to reduce overwhelm. It even includes a{' '}
-        <strong style={{ color: '#fff' }}>voice mode</strong> — describe your day out loud and it
+        interface designed to reduce overwhelm. It even includes a <strong>voice mode</strong> —
+        describe your day out loud and it
         parses your words into scheduled tasks. What started as a personal fix is becoming a genuine
         productivity tool for students who think the way I do.
       </>
