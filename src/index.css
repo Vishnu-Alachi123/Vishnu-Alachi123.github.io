@@ -1,13 +1,13 @@
 /* ============================================================
    Vishnu Alachi — a personal portfolio in the visual/interaction
-   style of a GitHub profile (canvas, spacing, contribution-grid
-   convention), NOT a GitHub clone. The accent hue is deliberately
-   shifted off GitHub's blue so it reads as "modeled after" rather
-   than "this is github.com" — see Footer for the explicit note too.
+   style of a GitHub profile (colors, spacing, contribution-grid
+   convention). It's still not github.com — see Footer for the
+   explicit note — but styling now closely follows GitHub's own
+   palette rather than a shifted accent hue.
    ============================================================ */
 
 :root {
-  /* dark (default) */
+  /* dark (default) — GitHub's own dark-theme values */
   --canvas: #0d1117;
   --canvas-subtle: #161b22;
   --canvas-inset: #010409;
@@ -16,14 +16,14 @@
   --fg: #e6edf3;
   --fg-muted: #8b949e;
   --fg-subtle: #6e7681;
-  --accent: #2dd4bf;
-  --accent-emphasis: #14b8a6;
+  --accent: #58a6ff;
+  --accent-emphasis: #1f6feb;
   --success: #3fb950;
   --danger: #f85149;
   --btn-primary-bg: #238636;
   --btn-primary-hover: #2ea043;
-  --topic-bg: rgba(45, 212, 191, 0.14);
-  --topic-fg: #2dd4bf;
+  --topic-bg: rgba(56, 139, 253, 0.15);
+  --topic-fg: #58a6ff;
   --level-0: #161b22;
   --level-1: #0e4429;
   --level-2: #006d32;
@@ -48,14 +48,14 @@
   --fg: #1f2328;
   --fg-muted: #59636e;
   --fg-subtle: #6e7781;
-  --accent: #0f766e;
-  --accent-emphasis: #0d5f59;
+  --accent: #0969da;
+  --accent-emphasis: #0552a5;
   --success: #1a7f37;
   --danger: #cf222e;
   --btn-primary-bg: #2da44e;
   --btn-primary-hover: #2c974b;
-  --topic-bg: #ccfbf1;
-  --topic-fg: #0f766e;
+  --topic-bg: #ddf4ff;
+  --topic-fg: #0969da;
   --level-0: #ebedf0;
   --level-1: #9be9a8;
   --level-2: #40c463;
@@ -74,14 +74,14 @@
     --fg: #1f2328;
     --fg-muted: #59636e;
     --fg-subtle: #6e7781;
-    --accent: #0f766e;
-    --accent-emphasis: #0d5f59;
+    --accent: #0969da;
+    --accent-emphasis: #0552a5;
     --success: #1a7f37;
     --danger: #cf222e;
     --btn-primary-bg: #2da44e;
     --btn-primary-hover: #2c974b;
-    --topic-bg: #ccfbf1;
-    --topic-fg: #0f766e;
+    --topic-bg: #ddf4ff;
+    --topic-fg: #0969da;
     --level-0: #ebedf0;
     --level-1: #9be9a8;
     --level-2: #40c463;

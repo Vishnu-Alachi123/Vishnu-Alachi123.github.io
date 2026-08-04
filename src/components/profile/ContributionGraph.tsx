@@ -10,6 +10,8 @@ type Props = {
   title: string;
   calendar: ContributionCalendar;
   emptyMessage: string;
+  /** when set, the detail panel adds a link out to the real activity for that day */
+  dayLink?: (day: ContributionDay) => string;
 };
 
 function monthLabelForWeek(week: ContributionCalendar['weeks'][number], prevMonth: number): string {
@@ -28,7 +30,7 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export default function ContributionGraph({ title, calendar, emptyMessage }: Props) {
+export default function ContributionGraph({ title, calendar, emptyMessage, dayLink }: Props) {
   const [selected, setSelected] = useState<ContributionDay | null>(null);
 
   return (
@@ -93,6 +95,14 @@ export default function ContributionGraph({ title, calendar, emptyMessage }: Pro
                   <span className={styles.detailDate}>{formatDate(selected.date)}</span>
                   <span className={styles.detailNote}>
                     {selected.note ?? `${selected.count} contribution${selected.count === 1 ? '' : 's'}`}
+                    {dayLink && (
+                      <>
+                        {' · '}
+                        <a href={dayLink(selected)} target="_blank" rel="noopener noreferrer">
+                          View on GitHub ↗
+                        </a>
+                      </>
+                    )}
                   </span>
                 </>
               ) : (

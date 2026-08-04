@@ -124,3 +124,54 @@
   color: var(--fg-subtle);
   margin-top: 8px;
 }
+
+.logRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.logLabel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.74rem;
+  color: var(--fg-muted);
+}
+.logInput,
+.logTextarea {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--fg);
+  background: var(--canvas-inset);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  width: 100%;
+}
+.logInput:focus,
+.logTextarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.logTextarea {
+  resize: vertical;
+}
+.logCheck {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  align-self: flex-end;
+  padding-bottom: 8px;
+}
+.logActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.logActions .btn {
+  flex: 1;
+  justify-content: center;
+}

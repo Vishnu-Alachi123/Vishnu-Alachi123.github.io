@@ -2,11 +2,11 @@
 
 A single-page portfolio built with **React + TypeScript + Vite**, laid out in
 the style of a GitHub user profile — pinned/full repo list, two interactive
-contribution heatmaps, an expandable experience timeline, and a
+contribution heatmaps, an expandable experience timeline, a blog, and a
 customize/settings panel — populated with real project and résumé data. It's
 a personal portfolio modeled on that layout, not github.com (see the footer
-disclaimer and the accent color, which is deliberately not GitHub's blue).
-Deployed to GitHub Pages via GitHub Actions.
+disclaimer, and the "View on GitHub ↗" link in the sidebar that goes to the
+real profile). Deployed to GitHub Pages via GitHub Actions.
 
 [Visit it here →](https://vishnu-alachi123.github.io)
 
@@ -46,7 +46,15 @@ npm run lint    # eslint
   no separate "repos" file to keep in sync.
 - **"Professional Experience" heatmap** (the hand-authored contribution
   graph): edit **`src/data/experienceLog.json`** — see the dedicated section
-  below. This is the "update what I'm doing right now" file.
+  below. This is the "update what I'm doing right now" file. The gear icon
+  in the profile header also has a small in-page helper that generates a
+  ready-to-paste entry for you (date, level, note → copy → paste into the
+  file on GitHub) — no raw-JSON-writing needed.
+- **Blog posts**: edit **`src/data/posts.json`** — add
+  `{ "id": "...", "title": "...", "date": "YYYY-MM-DD", "summary": "...",
+  "body": "..." }` and it appears in the Blog section automatically, newest
+  first, no component change needed. Empty array shows the current
+  "Nothing published yet" state.
 - **Pinned repos, display order, theme**: available live via the gear icon
   in the profile header — no code change needed, persisted per-visitor in
   their browser.
@@ -118,8 +126,10 @@ src/
     profile/                    the profile page itself
       ProfilePage, ProfileHeader
       RepoList, RepoCard, ExperienceList, ExperienceCard, ExpandableCard
-      ContributionGraph          interactive: click a square for detail
-      BlogSection, SettingsPanel, ContactCard
+      ContributionGraph          interactive: click a square for detail,
+                                 optional dayLink for a real-GitHub deep link
+      BlogSection                renders posts.json, or the empty state
+      SettingsPanel, LogEntryHelper, ContactCard
   data/
     projects.tsx                repos — single source of truth
     resume.json / resume.ts     résumé data (fetched live) + types
@@ -127,6 +137,7 @@ src/
     contributions.ts            shared contribution-calendar types
     experienceLog.json          hand-editable "professional" activity log
     experienceCalendar.ts       builds the calendar from the log, live
+    posts.json / posts.ts       blog posts (empty array = no posts yet)
     languageColors.ts
   hooks/
     useResume, useRepoCount, useScrollSpy
