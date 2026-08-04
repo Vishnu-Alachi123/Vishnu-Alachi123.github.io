@@ -52,6 +52,10 @@
   font-weight: 300;
   color: var(--fg-muted);
 }
+.handle:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
 .role {
   color: var(--fg-muted);
   font-size: 1rem;
