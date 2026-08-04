@@ -1,0 +1,23 @@
+.empty {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 40px 24px;
+  text-align: center;
+}
+.icon {
+  color: var(--fg-subtle);
+  margin-bottom: 12px;
+}
+.title {
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.body {
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+  margin-top: 6px;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
