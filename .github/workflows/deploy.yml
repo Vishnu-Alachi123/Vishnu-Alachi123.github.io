@@ -4,6 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Commits pushed with the default GITHUB_TOKEN (like the one
+  # contributions.yml makes) deliberately do NOT trigger other `push`
+  # workflows — GitHub's loop-prevention. workflow_run is the standard way
+  # to chain onto that anyway, so the contribution-data refresh actually
+  # results in a redeploy instead of silently going stale.
+  workflow_run:
+    workflows: ['Refresh GitHub contributions']
+    types: [completed]
 
 # Permissions the GITHUB_TOKEN needs to deploy to Pages.
 permissions:
@@ -19,9 +27,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip if this run was chained from a failed contribution-data refresh.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@v4
