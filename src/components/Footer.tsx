@@ -12,8 +12,10 @@ export default function Footer({ onAdminClick }: Props) {
         className={styles.hiddenLogin}
         onClick={onAdminClick}
         aria-label="Admin login"
-        title="Admin"
-      />
+        title="Admin login"
+      >
+        Admin
+      </button>
       <div className={styles.inner}>
         <div className={styles.row}>
           <span>© 2026 Vishnu Alachi</span>

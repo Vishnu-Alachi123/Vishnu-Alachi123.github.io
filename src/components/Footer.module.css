@@ -5,18 +5,24 @@
 
 .hiddenLogin {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background: none;
-  border: none;
+  bottom: 20px;
+  left: 20px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
   cursor: pointer;
-  opacity: 0;
+  border-radius: 4px;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.hiddenLogin:focus {
-  outline: 2px solid var(--accent);
+.hiddenLogin:hover {
+  background: var(--canvas);
+  color: var(--fg);
+  border-color: var(--accent);
 }
 
 .inner {
