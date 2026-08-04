@@ -1,28 +1,19 @@
 .foot {
   border-top: 1px solid var(--border);
-  position: relative;
 }
 
-.hiddenLogin {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  padding: 6px 12px;
-  font-size: 0.75rem;
-  background: var(--canvas-subtle);
-  border: 1px solid var(--border);
-  color: var(--fg-muted);
+.adminBtn {
+  background: none;
+  border: none;
+  color: var(--fg-subtle);
   cursor: pointer;
-  border-radius: 4px;
   font-family: var(--sans);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  padding: 0;
 }
 
-.hiddenLogin:hover {
-  background: var(--canvas);
-  color: var(--fg);
-  border-color: var(--accent);
+.adminBtn:hover {
+  color: var(--accent);
 }
 
 .inner {
