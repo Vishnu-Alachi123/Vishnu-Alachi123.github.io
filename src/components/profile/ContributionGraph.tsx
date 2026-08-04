@@ -1,4 +1,5 @@
-import type { ContributionCalendar } from '../../data/contributions';
+import { useState } from 'react';
+import type { ContributionCalendar, ContributionDay } from '../../data/contributions';
 import styles from './ContributionGraph.module.css';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -18,7 +19,18 @@ function monthLabelForWeek(week: ContributionCalendar['weeks'][number], prevMont
   return month !== prevMonth ? MONTHS[month] : '';
 }
 
+function formatDate(dateStr: string): string {
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
 export default function ContributionGraph({ title, calendar, emptyMessage }: Props) {
+  const [selected, setSelected] = useState<ContributionDay | null>(null);
+
   return (
     <div className={styles.wrap}>
       <div className={styles.header}>
@@ -59,11 +71,14 @@ export default function ContributionGraph({ title, calendar, emptyMessage }: Pro
               {calendar.weeks.map((week, wi) => (
                 <div key={wi} className={styles.week}>
                   {week.map((day) => (
-                    <div
+                    <button
                       key={day.date}
-                      className={styles.day}
+                      type="button"
+                      className={`${styles.day} ${selected?.date === day.date ? styles.selected : ''}`}
                       style={{ background: `var(--level-${day.level})` }}
                       title={`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}
+                      aria-label={`${formatDate(day.date)}: ${day.note ?? `${day.count} contribution${day.count === 1 ? '' : 's'}`}`}
+                      onClick={() => setSelected((cur) => (cur?.date === day.date ? null : day))}
                     />
                   ))}
                 </div>
@@ -71,12 +86,26 @@ export default function ContributionGraph({ title, calendar, emptyMessage }: Pro
             </div>
           </div>
 
-          <div className={styles.legend}>
-            Less
-            {LEVELS.map((l) => (
-              <span key={l} className={styles.legendSwatch} style={{ background: `var(--level-${l})` }} />
-            ))}
-            More
+          <div className={styles.footRow}>
+            <div className={styles.detail}>
+              {selected ? (
+                <>
+                  <span className={styles.detailDate}>{formatDate(selected.date)}</span>
+                  <span className={styles.detailNote}>
+                    {selected.note ?? `${selected.count} contribution${selected.count === 1 ? '' : 's'}`}
+                  </span>
+                </>
+              ) : (
+                <span className={styles.detailHint}>Click a square to see what was happening that day.</span>
+              )}
+            </div>
+            <div className={styles.legend}>
+              Less
+              {LEVELS.map((l) => (
+                <span key={l} className={styles.legendSwatch} style={{ background: `var(--level-${l})` }} />
+              ))}
+              More
+            </div>
           </div>
         </div>
       )}

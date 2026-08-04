@@ -26,7 +26,18 @@
   flex-shrink: 0;
 }
 .mark {
-  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: var(--canvas);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: -0.02em;
 }
 
 /* GitHub-style underline tab bar */

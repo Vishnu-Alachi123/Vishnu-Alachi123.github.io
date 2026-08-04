@@ -4,15 +4,17 @@
 .inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px;
+  padding: 20px 24px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--fg-subtle);
+}
+.row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  color: var(--fg-subtle);
 }
 .links {
   display: flex;
@@ -23,4 +25,10 @@
 }
 .inner a:hover {
   color: var(--accent);
+}
+.disclaimer {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--fg-subtle);
+  max-width: 46rem;
 }
