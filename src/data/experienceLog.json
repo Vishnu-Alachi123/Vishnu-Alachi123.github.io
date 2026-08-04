@@ -4,13 +4,13 @@
     "to": "2025-09-05",
     "weekdaysOnly": true,
     "level": 4,
-    "note": "Software Development Intern @ Oracle — building a Codex-native AI operations agent: an MCP server that turns natural-language requests into approved internal operations."
+    "note": "Software Development Intern @ Oracle"
   },
   {
     "from": "2026-07-15",
     "to": "present",
     "weekdaysOnly": true,
     "level": 4,
-    "note": "Software Development Intern @ Oracle (return intern) — continuing to build out and harden the AI operations agent."
+    "note": "Software Development Intern @ Oracle (return intern)"
   }
 ]

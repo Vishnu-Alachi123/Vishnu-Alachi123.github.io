@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { repoCards } from '../../data/githubProfile';
 import type { Theme, ProfileSettings } from '../../hooks/useProfileSettings';
+import LogEntryHelper from './LogEntryHelper';
 import styles from './SettingsPanel.module.css';
 
 type Props = {
@@ -94,6 +95,8 @@ export default function SettingsPanel({ open, onClose, settings, setTheme, toggl
             ))}
             <p className={styles.hint}>Pinned repos show in the featured grid above the full list.</p>
           </div>
+
+          <LogEntryHelper />
         </div>
       </div>
     </>

@@ -41,6 +41,7 @@ export default function ProfilePage() {
                 title="Open Source Activity"
                 calendar={realCalendar}
                 emptyMessage="Live GitHub data hasn't synced yet — check back soon."
+                dayLink={(day) => `https://github.com/Vishnu-Alachi123?tab=overview&from=${day.date}&to=${day.date}`}
               />
               <ContributionGraph
                 title="Professional Experience"
