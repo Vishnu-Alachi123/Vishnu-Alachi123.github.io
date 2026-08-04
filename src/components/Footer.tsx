@@ -1,8 +1,19 @@
 import styles from './Footer.module.css';
 
-export default function Footer() {
+type Props = {
+  onAdminClick: () => void;
+};
+
+export default function Footer({ onAdminClick }: Props) {
   return (
     <footer className={styles.foot}>
+      <button
+        type="button"
+        className={styles.hiddenLogin}
+        onClick={onAdminClick}
+        aria-label="Admin login"
+        title="Admin"
+      />
       <div className={styles.inner}>
         <div className={styles.row}>
           <span>© 2026 Vishnu Alachi</span>
