@@ -60,6 +60,8 @@ export default function ProfileHeader({ onOpenSettings }: { onOpenSettings: () =
         )}
       </div>
 
+      <span className={styles.eyebrow}>Personal portfolio</span>
+
       <div className={styles.nameRow}>
         <div className={styles.name}>
           {profile.name} <span className={styles.handle}>{GITHUB_USER}</span>
@@ -68,14 +70,17 @@ export default function ProfileHeader({ onOpenSettings }: { onOpenSettings: () =
       </div>
 
       <p className={styles.bio}>
-        I design software systems that solve real problems — currently building Findr, a campus
-        discovery app, and AI agents that operate real infrastructure. Graduating {profile.graduation}
-        , {profile.seeking.toLowerCase()}.
+        I&apos;m a software engineer who likes building things that actually get used — right now
+        that&apos;s an AI operations agent running in production at Oracle, and Findr, a campus
+        discovery app I run end to end. I care about taking ambiguous, real-world problems and
+        turning them into software that&apos;s reliable and genuinely useful, and I get restless if
+        I&apos;m not making something. Outside of code I play basketball and soccer, draw, and take
+        apart anything mechanical I can get my hands on. Graduating {profile.graduation}, {profile.seeking.toLowerCase()}.
       </p>
 
       <div className={styles.actions}>
         <a href="/Vishnu_Alachi_resume.pdf" download className="btn btn-primary">
-          Download résumé
+          Download resume
         </a>
         <button type="button" className={`btn ${styles.settingsBtn}`} onClick={onOpenSettings} aria-label="Customize profile">
           {ICONS.gear}
@@ -100,7 +105,9 @@ export default function ProfileHeader({ onOpenSettings }: { onOpenSettings: () =
       <ul className={styles.metaList}>
         <li>
           {ICONS.org}
-          Cal Poly, San Luis Obispo
+          <a href="https://www.calpoly.edu" target="_blank" rel="noopener noreferrer">
+            Cal Poly, San Luis Obispo
+          </a>
         </li>
         <li>
           {ICONS.location}

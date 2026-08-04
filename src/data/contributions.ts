@@ -2,6 +2,8 @@ export interface ContributionDay {
   date: string;
   count: number;
   level: 0 | 1 | 2 | 3 | 4;
+  /** what was actually happening that day — only ever present on the hand-authored experience calendar */
+  note?: string;
 }
 
 export interface ContributionCalendar {
