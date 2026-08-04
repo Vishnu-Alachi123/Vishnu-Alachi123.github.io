@@ -3,6 +3,8 @@ import resumeJson from './resume.json';
 export interface Role {
   title: string;
   org: string;
+  /** e.g. "Jun 2025 – Sep 2025"; may be a TODO placeholder pending real dates */
+  dates?: string;
   points: string[];
 }
 
