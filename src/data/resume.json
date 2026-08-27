@@ -19,9 +19,14 @@
       "org": "Oracle",
       "dates": "Jul 2025 – Sep 2025 · Jul 2026 – Present (return intern)",
       "points": [
-        "Built a Codex-native AI operations agent: an MCP server that exposes approved internal operations to an AI agent through natural language.",
-        "Designed a secure, queue-aware backend — allowlisted operations, signed stateless status handles, credential redaction, and owner-scoped polling.",
-        "Wrote extensive unit and evaluator tests covering validation, request routing, status-handle signing/expiry, and sensitive-value leakage prevention."
+        "Built an Oracle DIT Tools plugin exposing approved Jenkins/BugDB operations (env checks, credential retrieval, VM repair, rolling bounces, ADE full builds) to engineers through natural-language Codex requests, with an MCP server enforcing allowlisted jobs, schema validation, credential redaction, and dry-run/async status support.",
+        "Designed a circular round-robin queue across 4 Jenkins full-build slots with a lock-protected, persisted state file to fairly distribute long-running (50–80 min) builds and prevent race conditions between concurrent requests.",
+        "Architected a Silver Merge automation platform coordinating APEX, BugDB, ADE, OraReview, PMC, Jenkins, and Slack — replacing a fully manual, multi-system merge process with a durable, auditable end-to-end workflow up to the human-controlled final-merge handoff.",
+        "Built two implementations (a deterministic state-machine controller and a guarded Codex hybrid) where every AI-proposed action passes through a deterministic gateway checking permissions, leases, idempotency, and stage boundaries before execution.",
+        "Implemented durable recovery using SQLite-backed state: pre-write intent logging, outcome-unknown reconciliation, and idempotency guards to prevent duplicate bugs, builds, or submissions after a crash or restart.",
+        "Added a Slack support-escalation system with strict reply verification (correct engineer, channel, thread, and timing) so a human ack can safely resume a paused workflow without falsely marking a failed step successful.",
+        "Ran a 20-scenario, 3-repetition model benchmark across 5 Codex profiles to evaluate safety and task success, and validated the deterministic controller with 363/363 successful test executions across 3 full mock-suite runs.",
+        "Implemented deterministic PMC report parsing (HTTPS-restricted downloads, HTML sanitization, JUnit/JAudit correlation, ownership resolution) to create idempotent developer tracking bugs without letting untrusted report content authorize tool calls."
       ]
     },
     {
