@@ -1,5 +1,12 @@
 [
   {
+  "from": "2026-01-04",
+  "to": "2026-06-10",
+  "weekdaysOnly": true,
+  "level": 3,
+  "note": "SWE Major @ CalPoly"
+  },
+  {
     "from": "2025-07-15",
     "to": "2025-09-05",
     "weekdaysOnly": true,
