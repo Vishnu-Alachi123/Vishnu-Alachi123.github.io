@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Vishnu Alachi",
-    "role": "Software Engineering Student",
+    "role": "Software Engineer · Full-Stack & AI-Driven Systems",
     "graduation": "December 2026",
     "year": "Final year",
     "gpa": "3.4",
@@ -15,24 +15,52 @@
   },
   "roles": [
     {
-      "title": "Software Development Intern",
+      "title": "Software Developer Intern",
       "org": "Oracle",
-      "dates": "Jul 2025 – Sep 2025 · Jul 2026 – Present (return intern)",
+      "dates": "Jun 2026 – Sep 2026",
       "points": [
-        "Architected an end-to-end automation platform that replaced a fully manual, multi-system code-merge workflow — spanning issue tracking, build systems, code review, and merge reporting — with a self-driving pipeline that runs for about $2.17 per batch, freeing engineers from hours of manual coordination to focus on higher-priority work.",
-        "Built an AI-powered developer tool that lets engineers trigger approved CI/CD and infrastructure operations — environment checks, credential retrieval, build repair, deployments — through natural-language requests, backed by a secure server enforcing an operation allowlist, input validation, and credential redaction.",
-        "Designed a fair-distribution queue for long-running build jobs across parallel build slots, using lock-protected persisted state to eliminate race conditions between concurrent requests.",
-        "Built a crash-safe, durable workflow engine with SQLite-backed state, idempotent retries, and automatic reconciliation, guaranteeing no duplicate bug reports, builds, or submissions if a run is interrupted or restarted.",
-        "Added a human-in-the-loop Slack escalation flow with strict verification (correct engineer, channel, and timing) that safely pauses automation on edge cases and resumes only after human confirmation."
+        "Architected Silver Merge, a durable automation platform that replaced a 20+ step manual release workflow spanning APEX, BugDB, ADE, OraReview, PMC, Jenkins, and Slack with one auditable pipeline that runs unattended and stops at a human-controlled final-merge handoff.",
+        "Built the workflow as a deterministic state machine over SQLite — batches, stages, semantic actions, leases, evidence, and scheduler wakeups are all persisted — so a crashed or rebooted worker resumes from durable state rather than from conversation memory.",
+        "Designed an intent-then-reconcile protocol for every external write: the system records intent before dispatch, classifies an unconfirmed write as \"outcome unknown\", and performs read-only reconciliation against the external platform before any retry — eliminating duplicate BugDB bugs, OraReview submissions, Jenkins builds, and ADE mutations.",
+        "Built a guarded Codex hybrid controller in which the model proposes the next semantic operation and a deterministic gateway independently validates stage, arguments, lease ownership, idempotency, write-enablement, and stop boundary before anything executes — the model never holds shell access, workflow state, or final-merge authority.",
+        "Benchmarked 5 LLM configurations across 20 scenarios × 3 repetitions with frozen tool schemas and mock adapters; the top profile scored 81.88 with an 86.67% pass rate and zero safety violations, on $14.26 of spend against a $55 ceiling. Since no model cleared the 95% / zero-violation promotion gate, I recommended the deterministic controller remain the production execution authority with Codex as a guarded shadow layer.",
+        "Implemented a Slack support-escalation flow that pauses the affected batch and opens a durable incident under its existing thread, resuming only on a reply that passes strict verification (exact configured engineer, active channel member, correct thread, after the alert, unedited, non-duplicate) — and even then only authorizing a recheck, never marking the failed step successful.",
+        "Built deterministic PMC report analysis — host-allowlisted downloads with redirect revalidation, size and timeout limits, HTML sanitization, and credential isolation — that correlates JUnit and JAudit failures with file ownership from validated ADE/APEX evidence and files at most one idempotent tracking bug per responsible developer.",
+        "Shipped operator controls (pause, resume, schedule updates, stop-boundary changes, scheduler preview, forced wakeup) with an audit trail of actor and reason, so engineers manage the VM-hosted automation without touching its database; pause is cooperative, letting an in-flight call record its outcome before halting the next.",
+        "Reached 131 passing offline automated tests on the Codex automation, and 363 of 363 successful executions across three full runs of the deterministic suite (121/121 per run — 100% repeatability in the measured mock suite)."
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "org": "Oracle",
+      "dates": "Jun 2025 – Sep 2025",
+      "points": [
+        "Built an internal developer platform — a Codex plugin backed by a Python MCP server — letting engineers trigger approved Jenkins and BugDB operations from plain-English requests instead of memorizing job names, parameter formats, credentials, and CLI syntax.",
+        "Kept the plugin a deliberately thin client: credentials, the approved-job allowlist, validation rules, and execution logic all live server-side, so the model interprets intent while deterministic code retains execution authority.",
+        "Exposed a dozen operations behind that boundary — DIT environment availability and reservation, credential retrieval, bug creation, remote debugging, VM config check and repair, temp-file cleanup, log downloads to an approved share, JAR restore, rolling bounce, ADE full builds, and status checks on long-running jobs.",
+        "Hardened the surface with schema-level rejection of unknown parameters, an explicit read-only vs. side-effecting split, confirmation gates on live mutations, credential redaction from commands and results, pre-flight Jenkins auth validation, and dry-run inspection.",
+        "Solved the timeout problem for 50–80 minute builds with signed async job tracking: the tool returns once Jenkins confirms the build started, recording job name, build number, ADE transaction, and bug number so the developer can poll a read-only status check with normalized terminal states.",
+        "Implemented a race-condition-safe round-robin queue distributing ADE full builds across 4 approved Jenkins wrapper slots, persisting the selection to a state file under a filesystem lock so concurrent requests cannot claim the same slot, with a safe fallback to slot 1 on missing or malformed state.",
+        "Developed an AI agent harness (Python, AutoGen, React) with RAG-powered diagnostics, raising response accuracy from 50% to 95% through prompt engineering."
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "org": "Hack4Impact",
+      "dates": "Sep 2024 – Sep 2025",
+      "points": [
+        "Rebuilt the Spokes for Nonprofits website on a 9-person Agile team, replacing a manual Google Form and Sheet job-posting workflow with a direct-to-database pipeline.",
+        "Owned end-to-end development of the footer, skeleton-loading, and carousel filtering features in React.",
+        "Integrated MongoDB with role-based access control for secure authentication."
       ]
     },
     {
       "title": "Software Development Intern",
-      "org": "Exalture",
+      "org": "Exalture Software Labs",
       "dates": "Mar 2023 – May 2023",
       "points": [
-        "Debugged and refactored anti-collision software for satellites.",
-        "Contributed to the machine-learning component of the satellite project.",
+        "Optimized KNN model hyperparameters, improving evaluation accuracy for Python-based satellite anti-collision software.",
+        "Debugged and refactored the anti-collision software itself.",
         "Led a seminar on the importance of code efficiency and organization."
       ]
     },
@@ -52,26 +80,59 @@
     "Python",
     "JavaScript",
     "TypeScript",
+    "C",
+    "C++",
+    "PL/SQL",
     "React",
-    "React Native",
-    "Node",
+    "Spring Boot",
+    "Node.js",
+    "PostgreSQL",
     "MongoDB",
+    "Oracle SQL",
+    "SQLite",
+    "Git",
+    "Jenkins",
+    "Docker",
+    "CI/CD",
+    "Agile / Scrum",
     "MCP / AI Agents",
-    "Machine Learning",
-    "Data Mining / KDD",
-    "Computer Vision",
-    "Automation",
-    "HTML / CSS"
+    "Custom Agent Skill Design",
+    "AutoGen",
+    "RAG",
+    "Prompt Engineering",
+    "Computer Vision (OpenCV, YOLOv8)",
+    "ROS2"
   ],
   "coursework": [
-    "Knowledge Discovery in Databases (KDD)",
-    "Artificial Intelligence (CSC 480)",
-    "Linear Models",
     "Data Structures",
-    "Project-Based Object-Oriented Programming & Design",
-    "Fundamentals of Computer Science"
+    "Design & Analysis of Algorithms",
+    "Artificial Intelligence",
+    "Deep Learning",
+    "Computer Vision",
+    "Object-Oriented Design"
   ],
-  "certifications": [],
+  "certifications": [
+    {
+      "name": "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+      "issuer": "Oracle",
+      "year": "Sept 2025"
+    },
+    {
+      "name": "AI Agents with AutoGen",
+      "issuer": "LinkedIn Learning",
+      "year": "Jul 2025"
+    },
+    {
+      "name": "AI Reasoning Models",
+      "issuer": "LinkedIn Learning",
+      "year": "Jul 2025"
+    },
+    {
+      "name": "Cybersecurity Fundamentals",
+      "issuer": "LinkedIn Learning",
+      "year": "Jul 2025"
+    }
+  ],
   "currentlyLearning": [
     "Reinforcement learning for robot control",
     "Production LLM agent evaluation & safety",

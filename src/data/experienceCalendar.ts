@@ -1,4 +1,4 @@
-import type { ContributionCalendar, ContributionDay } from './contributions';
+import type { ContributionCalendar, ContributionDay, ContributionLegendItem } from './contributions';
 import rawLog from './experienceLog.json';
 
 export interface ExperienceLogEntry {
@@ -10,6 +10,10 @@ export interface ExperienceLogEntry {
   note: string;
   /** defaults to false; set true for work entries so weekends stay blank */
   weekdaysOnly?: boolean;
+  /** hex brand color for this stretch's squares — e.g. Oracle red, Cal Poly green */
+  color?: string;
+  /** short name for the color key under the graph, e.g. "Oracle" */
+  label?: string;
 }
 
 const log = rawLog as ExperienceLogEntry[];
@@ -61,6 +65,7 @@ export function buildExperienceCalendar(weeks = 53): ContributionCalendar {
 
       let level: ContributionDay['level'] = 0;
       let note: string | undefined;
+      let color: string | undefined;
 
       if (!inFuture) {
         for (const e of entries) {
@@ -68,16 +73,32 @@ export function buildExperienceCalendar(weeks = 53): ContributionCalendar {
           if (e.weekdaysOnly && !isWeekday) continue;
           level = e.level; // later entries win on overlap
           note = e.note;
+          color = e.color;
         }
       }
 
       const count = level * 2;
       total += count;
-      week.push({ date: dateStr, count, level, note });
+      week.push({ date: dateStr, count, level, note, color });
       cursor.setDate(cursor.getDate() + 1);
     }
     resultWeeks.push(week);
   }
 
-  return { available: true, totalContributions: total, weeks: resultWeeks };
+  return { available: true, totalContributions: total, weeks: resultWeeks, legend: buildLegend() };
+}
+
+/**
+ * One row per distinct label/color pair in the log, in the order they first
+ * appear — so adding a colored entry to experienceLog.json also adds it to
+ * the key under the graph, with no component change.
+ */
+function buildLegend(): ContributionLegendItem[] | undefined {
+  const seen = new Map<string, ContributionLegendItem>();
+  for (const e of log) {
+    if (!e.color || !e.label) continue;
+    const key = `${e.label}|${e.color}`;
+    if (!seen.has(key)) seen.set(key, { label: e.label, color: e.color });
+  }
+  return seen.size > 0 ? [...seen.values()] : undefined;
 }

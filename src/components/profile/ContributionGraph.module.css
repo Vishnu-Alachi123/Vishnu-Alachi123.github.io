@@ -130,7 +130,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   font-size: 0.7rem;
   color: var(--fg-subtle);
   flex-shrink: 0;
@@ -139,6 +140,16 @@
   width: 10px;
   height: 10px;
   border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* labeled key used when the calendar supplies per-entry brand colors */
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--fg-muted);
+  white-space: nowrap;
 }
 
 .empty {
