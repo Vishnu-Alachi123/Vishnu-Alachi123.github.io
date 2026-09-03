@@ -5,7 +5,13 @@ import { repoCards } from '../../data/githubProfile';
 import styles from './ProfileHeader.module.css';
 
 const GITHUB_USER = 'Vishnu-Alachi123';
-const AVATAR_URL = `https://github.com/${GITHUB_USER}.png`;
+
+/**
+ * Tried in order: the headshot committed to public/, then the live GitHub
+ * avatar, then the initials block. Swapping the photo is just replacing
+ * public/avatar.jpeg — no code change.
+ */
+const AVATAR_SOURCES = ['/avatar.jpeg', `https://github.com/${GITHUB_USER}.png`];
 
 const ICONS = {
   location: (
@@ -43,7 +49,8 @@ const ICONS = {
 export default function ProfileHeader({ onOpenSettings }: { onOpenSettings: () => void }) {
   const repoCount = useRepoCount(repoCards.length);
   const { profile, roles } = useResume();
-  const [avatarFailed, setAvatarFailed] = useState(false);
+  const [avatarIndex, setAvatarIndex] = useState(0);
+  const avatarSrc = AVATAR_SOURCES[avatarIndex];
 
   const initials = profile.name
     .split(' ')
@@ -53,15 +60,15 @@ export default function ProfileHeader({ onOpenSettings }: { onOpenSettings: () =
   return (
     <div className={styles.header}>
       <div className={styles.avatarWrap}>
-        {avatarFailed ? (
-          <div className={styles.avatarFallback}>{initials}</div>
-        ) : (
+        {avatarSrc ? (
           <img
             className={styles.avatar}
-            src={AVATAR_URL}
+            src={avatarSrc}
             alt={profile.name}
-            onError={() => setAvatarFailed(true)}
+            onError={() => setAvatarIndex((i) => i + 1)}
           />
+        ) : (
+          <div className={styles.avatarFallback}>{initials}</div>
         )}
       </div>
 
