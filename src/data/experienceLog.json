@@ -1,23 +1,29 @@
 [
   {
-  "from": "2026-01-04",
-  "to": "2026-06-10",
-  "weekdaysOnly": true,
-  "level": 3,
-  "note": "SWE Major @ CalPoly"
+    "from": "2026-01-04",
+    "to": "2026-06-10",
+    "weekdaysOnly": true,
+    "level": 3,
+    "label": "Cal Poly",
+    "color": "#154734",
+    "note": "SWE Major @ Cal Poly"
   },
   {
-    "from": "2025-07-15",
+    "from": "2025-06-16",
     "to": "2025-09-05",
     "weekdaysOnly": true,
     "level": 4,
+    "label": "Oracle",
+    "color": "#C74634",
     "note": "Software Development Intern @ Oracle"
   },
   {
-    "from": "2026-07-15",
+    "from": "2026-06-15",
     "to": "present",
     "weekdaysOnly": true,
     "level": 4,
+    "label": "Oracle",
+    "color": "#C74634",
     "note": "Software Development Intern @ Oracle (return intern)"
   }
 ]
