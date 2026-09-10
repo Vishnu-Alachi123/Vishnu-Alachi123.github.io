@@ -19,11 +19,20 @@
   },
   {
     "from": "2026-06-15",
-    "to": "present",
+    "to": "2026-09-05",
     "weekdaysOnly": true,
     "level": 4,
     "label": "Oracle",
     "color": "#C74634",
     "note": "Software Development Intern @ Oracle (return intern)"
+  },
+  {
+    "from": "2026-09-05",
+    "to": "present",
+    "weekdaysOnly": true,
+    "level": 3,
+    "label": "Cal Poly",
+    "color": "#154734",
+    "note": "SWE Major @ Cal Poly"
   }
 ]
